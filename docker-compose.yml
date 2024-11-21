@@ -1,4 +1,15 @@
 services:
+  user:
+    container_name: user
+    build: ./user
+    volumes:
+      - ./user/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3012:3012"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
   microservice:
     container_name: microservice
     build: ./microservice
