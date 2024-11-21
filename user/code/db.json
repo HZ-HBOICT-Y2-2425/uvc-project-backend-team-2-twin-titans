@@ -1,7 +1,16 @@
 {
   "meta": {
-    "tile": "List of animals",
-    "date": "September 2024"
+    "titel": "Lijst van alle gebruikers",
+    "datum": "November 2024"
   },
-  "animals" : ["test", "test", "test", "test"]
+  "gebruikers": [
+    {
+      "id": 1,
+      "naam": "test"
+    },
+    {
+      "id": 2,
+      "naam": "test2"
+    }
+  ]
 }

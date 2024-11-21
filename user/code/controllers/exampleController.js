@@ -2,34 +2,30 @@ import { JSONFilePreset } from "lowdb/node";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
-const defaultData = { meta: {"tile": "List of animals","date": "September 2024"}, animals : [] }
-const db = await JSONFilePreset('db.json', defaultData)
-const animals = db.data.animals
+const defaultData = { meta: {"titel": "Lijst van alle gebruikers", "datum": "November 2024"}, gebruikers : [] };
+const db = await JSONFilePreset('db.json', defaultData);
+const gebruikers = db.data.gebruikers;
 
-export async function responseExample(req, res) {
-  res.status(200).send(animals);
+export async function getAllUsers(req, res) {
+  res.status(200).send(gebruikers);
 }
 
-export async function updateExample(req, res) {
-  // fixme check if id exists
+export async function createUser(req, res) {
   let id = req.query.id;
-  let name = req.query.name;
-  let type = req.query.type;
+  let naam = req.query.naam;
   let time = new Date().toLocaleString();
-  let animal = {id: id, name: name, type: type, time: time};  
-  // todo remove log
-  console.log(animal);
-  animals.push(animal);
+  let gebruiker = {id: id, naam: naam};
+  gebruikers.push(gebruiker);
   await db.write();
 
   res.status(201).send(`I added this client: ${JSON.stringify(animal)}?`);
 }
 
-export async function responseByIdExample(req, res) {
+export async function getUserById(req, res) {
   let id = req.params.id;
-  let animal = animals.find(animal => animal.id === id);
-  if (animal) {
-    res.status(200).send(animal);
+  let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
+  if (gebruiker) {
+    res.status(200).send(gebruiker);
   } else {
     res.status(404).send('Animal not found');
   }
