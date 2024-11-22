@@ -13,19 +13,19 @@ export async function getAllUsers(req, res) {
 export async function createUser(req, res) {
   let id = req.query.id;
   let naam = req.query.naam;
-  let time = new Date().toLocaleString();
-  let gebruiker = {id: id, naam: naam};
+  let email = req.query.email;
+  let postcode = req.query.postcode;
+  let co2bijdrage = req.query.co2bijdrage;
+  let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
   gebruikers.push(gebruiker);
   await db.write();
 
-  res.status(201).send(`I added this client: ${JSON.stringify(animal)}?`);
+  res.status(201).send(`I added this client: ${JSON.stringify(gebruiker)}?`);
 }
 
 export async function getUserById(req, res) {
   let id = req.params.id;
-  console.log(id);
   let gebruiker = gebruikers.find(gebruiker => gebruiker.id == id);
-  console.log(gebruiker);
   if (gebruiker) {
     res.status(200).send(gebruiker);
   } else {

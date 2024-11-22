@@ -6,11 +6,10 @@
   "gebruikers": [
     {
       "id": 1,
-      "naam": "test"
-    },
-    {
-      "id": 2,
-      "naam": "test2"
+      "naam": "test",
+      "email": "test@email.com",
+      "postcode": "1234AB",
+      "co2bijdrage": 1234
     }
   ]
 }
