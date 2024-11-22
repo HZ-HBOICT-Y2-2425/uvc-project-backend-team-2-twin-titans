@@ -16,11 +16,14 @@ export async function createUser(req, res) {
   let email = req.query.email;
   let postcode = req.query.postcode;
   let co2bijdrage = req.query.co2bijdrage;
-  let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
-  gebruikers.push(gebruiker);
-  await db.write();
-
-  res.status(201).send(`I added this client: ${JSON.stringify(gebruiker)}?`);
+  if (id && naam && email && postcode && co2bijdrage) {
+    let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
+    gebruikers.push(gebruiker);
+    await db.write();
+    res.status(201).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}?`);
+  } else {
+    res.status(404).send('Gebruiker mist een parameter');
+  }
 }
 
 export async function getUserById(req, res) {
