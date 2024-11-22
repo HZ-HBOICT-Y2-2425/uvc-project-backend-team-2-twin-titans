@@ -9,6 +9,6 @@ const router = express.Router();
 // });
 router.get('/', checkName, getAllUsers);
 router.post('/new', checkName, createUser);
-router.get('/:id', checkName, getUserById);
+router.get('/id/:id', checkName, getUserById);
 
 export default router;

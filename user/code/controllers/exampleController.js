@@ -23,10 +23,12 @@ export async function createUser(req, res) {
 
 export async function getUserById(req, res) {
   let id = req.params.id;
-  let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
+  console.log(id);
+  let gebruiker = gebruikers.find(gebruiker => gebruiker.id == id);
+  console.log(gebruiker);
   if (gebruiker) {
     res.status(200).send(gebruiker);
   } else {
-    res.status(404).send('Animal not found');
+    res.status(404).send('Gebruiker niet gevonden');
   }
 }
