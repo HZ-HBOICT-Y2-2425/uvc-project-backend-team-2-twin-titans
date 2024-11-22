@@ -42,20 +42,21 @@ export async function getChatByUserId(req, res) {
   let userId = Number(req.params.id);
 
   let userChats = [];
+  let idFound = false;
 
   chats.forEach(chat => {
-    let idFound = false
+    // Elke chat heeft een array met de ID's van alle gebruikers die meedoen aan de chat.
+    // Hier word er door elke van de indexes in de array geloopt om te kijken of die overeen komt met de opgegeven ID.
+    // Als de opgegeven ID overkomt met de chat, wordt de chat toegevoegd aan de userChats variabele
     chat.gebruikers.forEach(gebruikerId => {
       if (gebruikerId === userId) {
+        userChats.push(chat);
         idFound = true;
       }
     });
-    if (idFound) { userChats.push(chat); }
   });
-  
-  console.log('userChats:', userChats);
 
-  if (userChats[0]) {
+  if (idFound) {
     res.status(200).send(userChats);
   } else {
     res.status(404).send('Chat niet gevonden');
