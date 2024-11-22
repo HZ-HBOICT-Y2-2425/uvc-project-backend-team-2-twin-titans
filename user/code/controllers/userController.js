@@ -2,7 +2,7 @@ import { JSONFilePreset } from "lowdb/node";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
-const defaultData = { meta: {"titel": "Lijst van alle gebruikers", "datum": "November 2024"}, gebruikers : [] };
+const defaultData = { meta: {"titel": "Lijst van alle gebruikers & chats", "datum": "November 2024"}, gebruikers : [] };
 const db = await JSONFilePreset('db.json', defaultData);
 const gebruikers = db.data.gebruikers;
 
@@ -11,16 +11,16 @@ export async function getAllUsers(req, res) {
 }
 
 export async function createUser(req, res) {
-  let id = req.query.id;
+  let id = Number(req.query.id);
   let naam = req.query.naam;
   let email = req.query.email;
   let postcode = req.query.postcode;
-  let co2bijdrage = req.query.co2bijdrage;
+  let co2bijdrage = Number(req.query.co2bijdrage);
   if (id && naam && email && postcode && co2bijdrage) {
     let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
     gebruikers.push(gebruiker);
     await db.write();
-    res.status(201).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}?`);
+    res.status(201).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}`);
   } else {
     res.status(404).send('Gebruiker mist een parameter');
   }

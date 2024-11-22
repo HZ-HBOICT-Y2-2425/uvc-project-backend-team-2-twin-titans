@@ -1,6 +1,6 @@
 {
   "meta": {
-    "titel": "Lijst van alle gebruikers",
+    "titel": "Lijst van alle gebruikers & chats",
     "datum": "November 2024"
   },
   "gebruikers": [
@@ -10,6 +10,33 @@
       "email": "test@email.com",
       "postcode": "1234AB",
       "co2bijdrage": 1234
+    },
+    {
+      "id": 2,
+      "naam": "test2",
+      "email": "test2@email.com",
+      "postcode": "1234AC",
+      "co2bijdrage": 1235
+    }
+  ],
+  "chats": [
+    {
+      "id": 1,
+      "gebruikers": [1, 2],
+      "berichten": [
+        {
+          "id": 1,
+          "gebruiker": 1,
+          "tekst": "hallo",
+          "tijdstip": "12:00"
+        },
+        {
+          "id": 2,
+          "gebruiker": 2,
+          "tekst": "hoi",
+          "tijdstip": "12:01"
+        }
+      ]
     }
   ]
 }
