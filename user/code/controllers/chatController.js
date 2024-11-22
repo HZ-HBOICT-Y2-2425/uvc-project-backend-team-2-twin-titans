@@ -7,7 +7,6 @@ const db = await JSONFilePreset('db.json', defaultData);
 const gebruikers = db.data.gebruikers;
 const chats = db.data.chats;
 
-
 export async function getAllChats(req, res) {
   res.status(200).send(chats);
 }
@@ -29,12 +28,36 @@ export async function createChat(req, res) {
   // }
 }
 
-export async function getChatById(req, res) {
-  let id = req.params.id;
-  let gebruiker = chats.find(gebruiker => gebruiker.id == id);
-  if (gebruiker) {
-    res.status(200).send(gebruiker);
+export async function getChatByChatId(req, res) {
+  let id = Number(req.params.id);
+  let chat = chats.find(chat => chat.id == id);
+  if (chat) {
+    res.status(200).send(chat);
   } else {
-    res.status(404).send('Gebruiker niet gevonden');
+    res.status(404).send('Chat niet gevonden');
+  }
+}
+
+export async function getChatByUserId(req, res) {
+  let userId = Number(req.params.id);
+
+  let userChats = [];
+
+  chats.forEach(chat => {
+    let idFound = false
+    chat.gebruikers.forEach(gebruikerId => {
+      if (gebruikerId === userId) {
+        idFound = true;
+      }
+    });
+    if (idFound) { userChats.push(chat); }
+  });
+  
+  console.log('userChats:', userChats);
+
+  if (userChats[0]) {
+    res.status(200).send(userChats);
+  } else {
+    res.status(404).send('Chat niet gevonden');
   }
 }

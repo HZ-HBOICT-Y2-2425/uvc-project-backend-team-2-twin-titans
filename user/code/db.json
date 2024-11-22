@@ -37,6 +37,24 @@
           "tijdstip": "12:01"
         }
       ]
+    },
+    {
+      "id": 2,
+      "gebruikers": [1],
+      "berichten": [
+        {
+          "id": 1,
+          "gebruiker": 1,
+          "tekst": "hallo",
+          "tijdstip": "12:03"
+        },
+        {
+          "id": 2,
+          "gebruiker": 1,
+          "tekst": "flikker op",
+          "tijdstip": "12:04"
+        }
+      ]
     }
   ]
 }
