@@ -11,12 +11,12 @@ export async function getAllUsers(req, res) {
 }
 
 export async function createUser(req, res) {
-  let id = Number(req.query.id);
+  let id = gebruikers[gebruikers.length - 1].id + 1;
   let naam = req.query.naam;
   let email = req.query.email;
   let postcode = req.query.postcode;
   let co2bijdrage = Number(req.query.co2bijdrage);
-  if (id && naam && email && postcode && co2bijdrage) {
+  if (naam && email && postcode && co2bijdrage) {
     let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
     gebruikers.push(gebruiker);
     await db.write();
