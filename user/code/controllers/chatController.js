@@ -1,4 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
+import { getResponseHandler } from "./responseHandler.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
@@ -19,7 +20,7 @@ export async function createChat(req, res) {
     let chat = {id: id, gebruikers: [gebruiker1, gebruiker2], berichten: []};
     chats.push(chat);
     await db.write();
-    res.status(201).send(`Deze chat is toegevoegt: ${JSON.stringify(chat)}`);
+    res.status(200).send(`Deze chat is toegevoegt: ${JSON.stringify(chat)}`);
   } else {
     res.status(404).send('Chat mist een parameter');
   }
@@ -44,7 +45,7 @@ export async function createMessage(req, res) {
       berichten.push(message);
       console.log("berichten:", berichten);
       await db.write();
-      res.status(201).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)} aan chat ${chatId}`);
+      res.status(200).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)} aan chat ${chatId}`);
     } else {
       res.status(404).send('Bericht mist een parameter');
     }
@@ -56,11 +57,12 @@ export async function createMessage(req, res) {
 export async function getChatByChatId(req, res) {
   let id = Number(req.params.id);
   let chat = chats.find(chat => chat.id == id);
-  if (chat) {
-    res.status(200).send(chat);
-  } else {
-    res.status(404).send('Chat niet gevonden');
-  }
+  getResponseHandler(res, chat, chat, 'Chat niet gevonden');
+  // if (chat) {
+  //   res.status(200).send(chat);
+  // } else {
+  //   res.status(404).send('Chat niet gevonden');
+  // }
 }
 
 export async function getChatByUserId(req, res) {
@@ -80,10 +82,10 @@ export async function getChatByUserId(req, res) {
       }
     });
   });
-
-  if (idFound) {
-    res.status(200).send(userChats);
-  } else {
-    res.status(404).send('Chat niet gevonden');
-  }
+  getResponseHandler(res, idFound, userChats, 'Chat niet gevonden');
+  // if (idFound) {
+  //   res.status(200).send(userChats);
+  // } else {
+  //   res.status(404).send('Chat niet gevonden');
+  // }
 }
