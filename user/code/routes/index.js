@@ -6,13 +6,16 @@ const router = express.Router();
 
 // user routes
 router.get('/', checkName, getAllUsers);
-router.post('/new', checkName, createUser);
-router.get('/id/:id', checkName, getUserById);
+router.post('/', checkName, createUser);
+router.get('/:id', checkName, getUserById);
 
 // chat routes
 router.get('/chat', getAllChats);
+// router.post('/chat', createChat);
 router.get('/chat/:id', getChatByChatId);
 router.get('/chat/user/:id', getChatByUserId);
-router.post('/message/new', createMessage);
+
+// message routes
+router.post('/message', createMessage);
 
 export default router;

@@ -14,20 +14,26 @@ export async function getAllChats(req, res) {
 export async function createMessage(req, res) {
   // TODO; maak dit maandag
   let chatId = Number(req.query.chatId);
-  let berichten = chats[chatId].berichten;
-  let gebruikerId = Number(req.query.userId)
-  // Check hoeveel berichten de chat met de opgegeven ID heeft, vervolgens pakt hij de ID van het laatste bericht en wordt er 1 bij toe gevoegt
-  let id = berichten[berichten.length - 1].id + 1;
-  let tekst = req.query.text;
-  let tijdstip = new Date().toLocaleString();
-  if (chatId && id && gebruikerId && tekst && tijdstip) {
-    let message = {id: id, gebruiker: gebruikerId, tekst: tekst, tijdstip: tijdstip};
-    berichten.push(message);
-    await db.write();
-    res.status(201).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)}`);
+  let chat = chats.find(chat => chat.id = chatId);
+  if (chat) {
+    let berichten = chat.berichten;
+    let gebruikerId = Number(req.query.userId)
+    // Check hoeveel berichten de chat met de opgegeven ID heeft, vervolgens pakt hij de ID van het laatste bericht en wordt er 1 bij toe gevoegt
+    let id = berichten[berichten.length - 1].id + 1;
+    let tekst = req.query.text;
+    let tijdstip = new Date().toLocaleString();
+    if (id && gebruikerId && tekst && tijdstip) {
+      let message = {id: id, gebruiker: gebruikerId, tekst: tekst, tijdstip: tijdstip};
+      berichten.push(message);
+      await db.write();
+      res.status(201).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)} aan chat ${chatId}`);
+    } else {
+      res.status(404).send('Bericht mist een parameter');
+    }
   } else {
-    res.status(404).send('Bericht mist een parameter');
+    res.status(404).send('ChatID kan niet gevonden worden');
   }
+
 }
 
 export async function getChatByChatId(req, res) {
