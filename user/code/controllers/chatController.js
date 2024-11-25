@@ -58,11 +58,6 @@ export async function getChatByChatId(req, res) {
   let id = Number(req.params.id);
   let chat = chats.find(chat => chat.id == id);
   getResponseHandler(res, chat, chat, 'Chat niet gevonden');
-  // if (chat) {
-  //   res.status(200).send(chat);
-  // } else {
-  //   res.status(404).send('Chat niet gevonden');
-  // }
 }
 
 export async function getChatByUserId(req, res) {
@@ -83,9 +78,4 @@ export async function getChatByUserId(req, res) {
     });
   });
   getResponseHandler(res, idFound, userChats, 'Chat niet gevonden');
-  // if (idFound) {
-  //   res.status(200).send(userChats);
-  // } else {
-  //   res.status(404).send('Chat niet gevonden');
-  // }
 }

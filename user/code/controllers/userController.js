@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler } from "./responseHandler";
+import { getResponseHandler } from "./responseHandler.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
@@ -32,9 +32,4 @@ export async function getUserById(req, res) {
   let id = req.params.id;
   let gebruiker = gebruikers.find(gebruiker => gebruiker.id == id);
   getResponseHandler(res, gebruiker, gebruiker, 'Gebruiker niet gevonden');
-  // if (gebruiker) {
-  //   res.status(200).send(gebruiker);
-  // } else {
-  //   res.status(404).send('Gebruiker niet gevonden');
-  // }
 }
