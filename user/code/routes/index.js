@@ -1,6 +1,7 @@
 import express from 'express';
 import { getAllUsers, createUser, getUserById } from '../controllers/userController.js';
-import { createChat, createMessage, getAllChats, getChatByChatId, getChatByUserId } from '../controllers/chatController.js';
+import { createChat, getAllChats, getChatByChatId, getChatByUserId } from '../controllers/chatController.js';
+import { createMessage } from '../controllers/messageController.js';
 import { checkName } from '../middleware/exampleMiddleware.js';
 const router = express.Router();
 

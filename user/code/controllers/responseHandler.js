@@ -19,6 +19,7 @@ export async function getResponseHandler(
 }
 
 /**
+ * DEFUNCT
  * Handles post responses for a certain condition
  * @param {*} response How to respond
  * @param {*} condition Checks if this condition is met
