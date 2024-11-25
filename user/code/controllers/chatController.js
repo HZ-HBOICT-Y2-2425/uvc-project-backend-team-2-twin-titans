@@ -11,6 +11,20 @@ export async function getAllChats(req, res) {
   res.status(200).send(chats);
 }
 
+export async function createChat(req, res) {
+  let id = chats[chats.length - 1].id + 1;
+  let gebruiker1 = Number(req.query.user1);
+  let gebruiker2 = Number(req.query.user2);
+  if (gebruiker1 && gebruiker2) {
+    let chat = {id: id, gebruikers: [gebruiker1, gebruiker2], berichten: []};
+    chats.push(chat);
+    await db.write();
+    res.status(201).send(`Deze chat is toegevoegt: ${JSON.stringify(chat)}`);
+  } else {
+    res.status(404).send('Chat mist een parameter');
+  }
+}
+
 export async function createMessage(req, res) {
   // TODO; maak dit maandag
   let chatId = Number(req.query.chatId);
