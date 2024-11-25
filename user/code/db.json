@@ -7,6 +7,7 @@
     {
       "id": 1,
       "naam": "test1",
+      "wachtwoord": "testtest",
       "email": "test1@email.com",
       "postcode": "1234AB",
       "co2bijdrage": 1234
@@ -14,6 +15,7 @@
     {
       "id": 2,
       "naam": "test2",
+      "wachtwoord": "testtest",
       "email": "test2@email.com",
       "postcode": "1234AC",
       "co2bijdrage": 1235
@@ -21,6 +23,7 @@
     {
       "id": 3,
       "naam": "test3",
+      "wachtwoord": "testtest",
       "email": "test3@email.com",
       "postcode": "1234AB",
       "co2bijdrage": 12345
@@ -68,6 +71,14 @@
           "tijdstip": "12:04"
         }
       ]
+    },
+    {
+      "id": 3,
+      "gebruikers": [
+        1,
+        2
+      ],
+      "berichten": []
     }
   ]
 }

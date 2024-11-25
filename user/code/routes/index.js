@@ -4,11 +4,6 @@ import { createMessage, getAllChats, getChatByChatId, getChatByUserId } from '..
 import { checkName } from '../middleware/exampleMiddleware.js';
 const router = express.Router();
 
-// user routes
-router.get('/', checkName, getAllUsers);
-router.post('/', checkName, createUser);
-router.get('/:id', checkName, getUserById);
-
 // chat routes
 router.get('/chat', getAllChats);
 // router.post('/chat', createChat);
@@ -17,5 +12,10 @@ router.get('/chat/user/:id', getChatByUserId);
 
 // message routes
 router.post('/message', createMessage);
+
+// user routes
+router.get('/', checkName, getAllUsers);
+router.post('/', checkName, createUser);
+router.get('/:id', checkName, getUserById);
 
 export default router;

@@ -12,12 +12,13 @@ export async function getAllUsers(req, res) {
 
 export async function createUser(req, res) {
   let id = gebruikers[gebruikers.length - 1].id + 1;
-  let naam = req.query.naam;
+  let naam = req.query.name;
+  let wachtwoord = req.query.password;
   let email = req.query.email;
-  let postcode = req.query.postcode;
-  let co2bijdrage = Number(req.query.co2bijdrage);
-  if (naam && email && postcode && co2bijdrage) {
-    let gebruiker = {id: id, naam: naam, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
+  let postcode = req.query.zipcode;
+  let co2bijdrage = Number(req.query.co2Contribution);
+  if (naam && wachtwoord && email && postcode && co2bijdrage) {
+    let gebruiker = {id: id, naam: naam, wachtwoord: wachtwoord, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
     gebruikers.push(gebruiker);
     await db.write();
     res.status(201).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}`);
