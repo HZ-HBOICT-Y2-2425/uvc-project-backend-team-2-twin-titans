@@ -17,9 +17,8 @@ export async function createUser(req, res) {
   let wachtwoord = req.query.password;
   let email = req.query.email;
   let postcode = req.query.zipcode;
-  let co2bijdrage = Number(req.query.co2Contribution);
-  if (naam && wachtwoord && email && postcode && co2bijdrage) {
-    let gebruiker = {id: id, naam: naam, wachtwoord: wachtwoord, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
+  if (naam && wachtwoord && email && postcode) {
+    let gebruiker = {id: id, naam: naam, wachtwoord: wachtwoord, email: email, postcode: postcode, co2bijdrage: 0};
     gebruikers.push(gebruiker);
     await db.write();
     res.status(200).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}`);
@@ -29,7 +28,7 @@ export async function createUser(req, res) {
 }
 
 export async function getUserById(req, res) {
-  let id = req.params.id;
-  let gebruiker = gebruikers.find(gebruiker => gebruiker.id == id);
+  let id = Number(req.params.id);
+  let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
   getResponseHandler(res, gebruiker, gebruiker, 'Gebruiker niet gevonden');
 }
