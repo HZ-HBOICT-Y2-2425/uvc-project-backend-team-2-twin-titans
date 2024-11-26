@@ -8,29 +8,25 @@ const db = await JSONFilePreset('db.json', defaultData);
 const chats = db.data.chats;
 
 export async function getAllMessagesByChatId(req, res) {
-  let id = Number(req.query.id);
-  let chat = chats.find(chat => chat.id = id);
+  let id = Number(req.params.id);
+  let chat = chats.find(chat => chat.id === id);
   getResponseHandler(res, chat, chat.berichten, 'Chat niet gevonden');
 }
 
 export async function createMessage(req, res) {
   // TODO; maak dit maandag
-  let chatId = Number(req.query.chatId);
-  let chat = chats.find(chat => chat.id = chatId);
-  console.log("chat:", chat);
+  let chatId = Number(req.params.id);
+  let chat = chats.find(chat => chat.id === chatId);
   if (chat) {
     let berichten = chat.berichten;
     let gebruikerId = Number(req.query.userId);
     // Check hoeveel berichten de chat met de opgegeven ID heeft, vervolgens pakt hij de ID van het laatste bericht en wordt er 1 bij toe gevoegt
     let id = berichten[berichten.length - 1].id + 1;
-    console.log("id:", id);
     let tekst = req.query.text;
     let tijdstip = new Date().toLocaleString();
     if (id && gebruikerId && tekst && tijdstip) {
       let message = {id: id, gebruiker: gebruikerId, tekst: tekst, tijdstip: tijdstip};
-      console.log("message:", message);
       berichten.push(message);
-      console.log("berichten:", berichten);
       await db.write();
       res.status(200).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)} aan chat ${chatId}`);
     } else {
