@@ -14,7 +14,6 @@ export async function getAllMessagesByChatId(req, res) {
 }
 
 export async function createMessage(req, res) {
-  // TODO; maak dit maandag
   let chatId = Number(req.params.id);
   let chat = chats.find(chat => chat.id === chatId);
   if (chat) {

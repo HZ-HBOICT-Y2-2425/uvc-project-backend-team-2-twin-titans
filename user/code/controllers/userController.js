@@ -27,6 +27,19 @@ export async function createUser(req, res) {
   }
 }
 
+export async function updateCo2ByUserId(req, res) {
+  let id = Number(req.params.id);
+  let co2 = Number(req.query.co2);
+  let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
+  if (gebruiker) {
+    gebruiker.co2bijdrage += co2;
+    await db.write();
+    res.status(200).send(`Deze gebruiker is verandert: ${JSON.stringify(gebruiker)}`);
+  } else {
+    res.status(404).send('Gebruiker niet gevonden');
+  }
+}
+
 export async function getUserById(req, res) {
   let id = Number(req.params.id);
   let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
