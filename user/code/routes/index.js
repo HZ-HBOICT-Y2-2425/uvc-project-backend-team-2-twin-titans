@@ -1,7 +1,7 @@
 import express from 'express';
 import { getAllUsers, createUser, getUserById } from '../controllers/userController.js';
 import { createChat, getAllChats, getChatByChatId, getChatByUserId } from '../controllers/chatController.js';
-import { createMessage } from '../controllers/messageController.js';
+import { createMessage, getAllMessagesByChatId } from '../controllers/messageController.js';
 import { checkName } from '../middleware/exampleMiddleware.js';
 const router = express.Router();
 
@@ -9,10 +9,11 @@ const router = express.Router();
 router.get('/chat', getAllChats);
 router.post('/chat', createChat);
 router.get('/chat/:id', getChatByChatId);
-router.get('/chat/user/:id', getChatByUserId);
+router.get('/:id/chat', getChatByUserId);
 
 // message routes
-router.post('/message', createMessage);
+router.get('/chat/:id/message', getAllMessagesByChatId);
+router.post('/chat/:id/message', createMessage);
 
 // user routes
 router.get('/', checkName, getAllUsers);
