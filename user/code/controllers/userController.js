@@ -32,3 +32,16 @@ export async function getUserById(req, res) {
   let gebruiker = gebruikers.find(gebruiker => gebruiker.id === id);
   getResponseHandler(res, gebruiker, gebruiker, 'Gebruiker niet gevonden');
 }
+
+export async function login(req, res) {
+  let userName = req.query.user;
+  let password = req.query.password;
+  let gebruiker = gebruikers.find(gebruiker => gebruiker.naam === userName);
+  if (gebruiker === undefined) { gebruiker = gebruikers.find(gebruiker => gebruiker.email === userName); }
+  if (gebruiker) {
+    let condition = gebruiker.wachtwoord === password;
+    getResponseHandler(res, condition, gebruiker, 'Wachtwoord is incorrect');
+  } else {
+    res.status(404).send('Gebruikersnaam niet gevonden');
+  }
+}

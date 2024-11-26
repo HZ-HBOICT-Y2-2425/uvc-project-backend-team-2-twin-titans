@@ -10,7 +10,7 @@
       "wachtwoord": "testtest",
       "email": "test1@email.com",
       "postcode": "1234AB",
-      "co2bijdrage": 1234
+      "co2bijdrage": 0
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "wachtwoord": "testtest",
       "email": "test2@email.com",
       "postcode": "1234AC",
-      "co2bijdrage": 1235
+      "co2bijdrage": 0
     },
     {
       "id": 3,
@@ -26,7 +26,7 @@
       "wachtwoord": "testtest",
       "email": "test3@email.com",
       "postcode": "1234AB",
-      "co2bijdrage": 12345
+      "co2bijdrage": 0
     }
   ],
   "chats": [
