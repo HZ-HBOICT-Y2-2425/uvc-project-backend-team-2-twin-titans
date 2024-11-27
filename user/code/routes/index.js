@@ -19,7 +19,7 @@ router.post('/chat/:id/message', createMessage);
 router.get('/', checkName, getAllUsers);
 router.post('/', checkName, createUser);
 router.get('/login', checkName, login);
-router.patch(':id/addco2', updateCo2ByUserId);
+router.patch('/:id/addco2', updateCo2ByUserId);
 router.get('/:id', checkName, getUserById);
 
 export default router;
