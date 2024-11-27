@@ -52,8 +52,7 @@ export async function login(req, res) {
   let gebruiker = gebruikers.find(gebruiker => gebruiker.naam === userName);
   if (gebruiker === undefined) { gebruiker = gebruikers.find(gebruiker => gebruiker.email === userName); }
   if (gebruiker) {
-    let condition = gebruiker.wachtwoord === password;
-    getResponseHandler(res, condition, gebruiker, 'Wachtwoord is incorrect');
+    getResponseHandler(res, gebruiker.wachtwoord === password, gebruiker, 'Wachtwoord is incorrect');
   } else {
     res.status(404).send('Gebruikersnaam niet gevonden');
   }
