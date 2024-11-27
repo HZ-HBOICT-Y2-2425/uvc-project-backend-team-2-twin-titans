@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler } from "./responseHandler.js";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
@@ -12,7 +12,7 @@ export async function getAllChats(req, res) {
 }
 
 export async function createChat(req, res) {
-  let id = chats[chats.length - 1].id + 1;
+  let id = getUniqueId(chats);
   let gebruiker1 = Number(req.query.user1);
   let gebruiker2 = Number(req.query.user2);
   if (gebruiker1 && gebruiker2) {

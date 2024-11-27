@@ -45,6 +45,13 @@ export async function postResponseHandler(response,
     }
 }
 
+export function getUniqueId(array) {
+    if (array.length === 0) {
+        return 1;
+    }
+    return array[array.length - 1].id + 1;
+}
+
 function goodResponse(response, message) {
     response.status(200).send(message);
 }

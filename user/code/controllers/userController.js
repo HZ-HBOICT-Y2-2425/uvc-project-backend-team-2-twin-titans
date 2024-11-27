@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler } from "./responseHandler.js";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
@@ -12,7 +12,7 @@ export async function getAllUsers(req, res) {
 }
 
 export async function createUser(req, res) {
-  let id = gebruikers[gebruikers.length - 1].id + 1;
+  let id = getUniqueId(gebruikers);
   let naam = req.query.name;
   let wachtwoord = req.query.password;
   let email = req.query.email;

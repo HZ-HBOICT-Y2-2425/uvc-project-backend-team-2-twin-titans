@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler } from "./responseHandler.js";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
@@ -22,7 +22,7 @@ export async function createMessage(req, res) {
     let chatGebruikers = chat.gebruikers; 
     if (chatGebruikers.lastIndexOf(gebruikerId) >= 0) {
       // Check hoeveel berichten de chat met de opgegeven ID heeft, vervolgens pakt hij de ID van het laatste bericht en wordt er 1 bij toe gevoegt
-      let id = berichten[berichten.length - 1].id + 1;
+      let id = getUniqueId(berichten);
       let tekst = req.query.text;
       let tijdstip = new Date().toLocaleString();
       if (id && gebruikerId && tekst && tijdstip) {
