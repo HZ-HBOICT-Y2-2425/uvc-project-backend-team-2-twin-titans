@@ -1,99 +1,38 @@
-# Setting Up Vitest for Unit Testing in SvelteKit
+# Setting Up Jest for Unit Testing in SvelteKit
 
-## 1. Install Vitest
-To get started with Vitest for unit testing, install it as a development dependency:
+## 1. Install Jest
+To get started with Jest for unit testing, install it as a development dependency:
 
 ```bash
-npm install -D vitest
+npm install --save-dev jest
 ```
 
-## 2. Configure `vite.config.js`
+## 2. Add test folder and add files:
 
-Update your `vite.config.js` file to support Vitest's requirements. If you don't have this file, create one in the root of your project.
+Create the `sum.js` and `sum.test.js` files.
 
-### Example `vite.config.js`:
-
-```javascript
-import { defineConfig } from 'vitest/config';
-
-export default defineConfig({
-    // Other configurations go here...
-
-    // Tell Vitest to use the `browser` entry points in `package.json` files,
-    // even though it's running in Node.js
-    resolve: process.env.VITEST
-        ? {
-                conditions: ['browser']
-            }
-        : undefined
-});
-```
-
-## 3. Write a Simple Testable Module
-
-Create a module to test. For example, a utility function to double numbers could look like this:
-
-### File: `multiplier.js`
+### Example `sum.js`:
 
 ```javascript
-import { writable } from 'svelte/store';
-
-export function multiplier(initial, factor) {
-  const value = writable(initial);
-
-  const set = (newValue) => {
-    value.set(newValue * factor);
-  };
-
-  return {
-    subscribe: value.subscribe,
-    set,
-    value: initial * factor
-  };
+function sum(a, b) {
+  return a + b;
 }
+module.exports = sum;
 ```
 
-## 4. Write a Unit Test
-
-Create a test file with the `.test.js` extension (e.g., `multiplier.svelte.test.js`), and use Vitest to test the module:
-
-### File: `multiplier.svelte.test.js`
+### Example `sum.test.js`:
 
 ```javascript
-import { expect, test } from 'vitest';
-import { multiplier } from './multiplier.js';
+const sum = require('./sum');
 
-test('Multiplier works as expected', () => {
-  const double = multiplier(0, 2);
-
-  // Initial value should be 0
-  expect(double.value).toEqual(0);
-
-  // Update value
-  double.set(5);
-
-  // Value should be doubled
-  expect(double.value).toEqual(10);
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
 ## 5. Run Your Tests
 
 Run the following command to execute your tests:
-
-```bash
-npx vitest
-```
-
-Alternatively, add a test script to your package.json:
-
-```json
-"scripts": {
-  "test": "vitest"
-}
-```
-
-Now, run tests using:
 
 ```bash
 npm run test
