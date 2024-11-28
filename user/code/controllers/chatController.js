@@ -3,7 +3,7 @@ import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
-const defaultData = { meta: {"titel": "Lijst van alle gebruikers & chats", "datum": "November 2024"}, chats : [] };
+const defaultData = { meta: {"title": "List of all users & chats", "date": "November 2024"}, chats : [] };
 const db = await JSONFilePreset('db.json', defaultData);
 const chats = db.data.chats;
 
