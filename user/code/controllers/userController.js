@@ -21,7 +21,7 @@ export async function createUser(req, res) {
     let user = {id: id, name: name, password: password, email: email, zipcode: zipcode, co2Contribution: 0};
     users.push(user);
     await db.write();
-    res.status(200).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(user)}`);
+    res.status(200).send(user);
   } else {
     res.status(404).send('Gebruiker mist een parameter');
   }
