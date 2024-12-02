@@ -1,0 +1,33 @@
+name: Build and Test Svelte Application
+
+on: 
+  push:
+    branches:
+      - "**"  #1.2 Trigger bij elke push naar elke branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Haal de laatste code op
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Installeer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      # 3. Installeer dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 5. unit test
+      - name: Run test
+        run: npm run test
+
+      # 7. Run ESLint
+      - name: Run ESLint
+        run: npm run lint
