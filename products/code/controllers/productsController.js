@@ -41,32 +41,73 @@ export async function getProductsByUserID(req, res) {
 }
 
 export async function createProduct(req, res) {
-  let _lastID = db.data.lastID || 0;
-  
+  let _lastID = db.data.products.length ? db.data.products[db.data.products.length - 1].id : 0;
+
   // Auto-increment ID
   let _id = _lastID + 1;
 
   let _userID = parseInt(req.query.userID);
   let _title = req.query.title;
-  let _category = req.query.category;
+  let _consumables = req.query.consumables;
+  let _allergies = req.query.allergies;
   let _price = parseFloat(req.query.price);
   let _amount = parseFloat(req.query.amount);
   let _unit = req.query.unit;
   let _description = req.query.description;
 
   // Validate input fields
-  if (!_userID || !_title || !_category || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
-    return res.status(400).send({ error: "All required fields must be filled in." });
+  if (!_userID || !_title || !_consumables || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
+    return res.status(400).send({ error: "All required fields must be filled in correctly." });
+  }
+
+  // Validate and process consumables
+  if (typeof _consumables === 'string') {
+    _consumables = _consumables
+      .split(',')
+      .map(Number)
+      .filter(num => !isNaN(num)); // Remove invalid entries (NaN)
+  } else if (typeof _consumables === 'number') {
+    _consumables = [_consumables];
+  } else {
+    return res.status(400).send({ error: "Consumables must be a valid ID number or a comma-separated list of numbers." });
+  }
+
+  // Check if consumables array is valid after processing
+  if (!_consumables.length) {
+    return res.status(400).send({ error: "Consumables must contain at least one valid ID number." });
+  }
+
+  // Validate and process allergies
+  if (!_allergies) {
+    _allergies = [];
+  } else if (typeof _allergies === 'string') {
+    _allergies = _allergies
+      .split(',')
+      .map(Number)
+      .filter(num => !isNaN(num)); // Remove invalid entries (NaN)
+  } else if (typeof _allergies === 'number') {
+    _allergies = [_allergies];
+  } else {
+    return res.status(400).send({ error: "Allergies must be a valid ID number or a comma-separated list of numbers." });
+  }
+
+  // Check if allergies array contains invalid entries
+  if (_allergies.some(isNaN)) {
+    return res.status(400).send({ error: "All allergies must be valid ID numbers." });
   }
 
   // Initialize CO₂ savings
   let _co2Contribution = 0;
 
-  // Calculate general CO₂ savings
-  if (_unit === "g" || _unit === "ml") {
-    _co2Contribution = ((_amount / 1000) / 7.1) * 0.264;
+  if (_unit !== "g" && _unit !== "ml" && _unit !== "kg" && _unit !== "l") {
+    return res.status(400).send({ error: "Unit must be 'g', 'ml', 'kg' or 'l'." });
   } else {
-    _co2Contribution = (_amount / 7.1) * 0.264;
+    // Calculate general CO₂ savings
+    if (_unit === "g" || _unit === "ml") {
+      _co2Contribution = ((_amount / 1000) / 7.1) * 0.264;
+    } else {
+      _co2Contribution = (_amount / 7.1) * 0.264;
+    }
   }
 
   let _reserved = false;
@@ -83,7 +124,8 @@ export async function createProduct(req, res) {
     id: _id,
     userID: _userID,
     title: _title,
-    category: _category,
+    consumables: _consumables,
+    allergies: _allergies,
     price: parseFloat(_price.toFixed(2)),
     amount: _amount,
     unit: _unit,
@@ -100,7 +142,7 @@ export async function createProduct(req, res) {
   db.data.lastID = _id; // Update the last used ID
   await db.write(); // Save changes to the file
 
-  res.status(200).send(`Added product: ${JSON.stringify(product)}`);
+  res.status(200).send(`Added product: ${JSON.stringify(_product)}`);
 }
 
 export async function reserveProduct(req, res) {
@@ -136,25 +178,54 @@ export async function updateProduct(req, res) {
       return res.status(404).send({ error: "Product not found." });
     } else {
       let _title = req.query.title;
-      let _category = req.query.category;
+      let _consumables = req.query.consumables;
+      let _allergies = req.query.allergies;
       let _price = parseFloat(req.query.price);
       let _amount = parseFloat(req.query.amount);
       let _unit = req.query.unit;
       let _description = req.query.description;
 
       // Validate input fields
-      if (!_title || !_category || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
-        return res.status(400).send({ error: "All required fields must be filled in." });
+      if (!_title || !_consumables || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
+        return res.status(400).send({ error: "All required fields must be filled in correctly." });
+      }
+
+      // Check if _consumables is a string and split it into an array
+      if (typeof _consumables === 'string') {
+        _consumables = _consumables.split(',').map(Number);
+
+        if (_consumables === null) {
+          return res.status(400).send({ error: "Consumables must be ID number." });
+        }
+      } else if (typeof _consumables === 'number') {
+        _consumables = [_consumables];
+      }
+
+      // Check if _allergies is a string and split it into an array
+      if (!_allergies) {
+        _allergies = [];
+      } else if (typeof _allergies === 'string') {
+        _allergies = _allergies.split(',').map(Number);
+
+        if (_allergies === null) {
+          return res.status(400).send({ error: "Allergies must be ID number." });
+        }
+      } else if (typeof _allergies === 'number') {
+        _allergies = [_allergies];
       }
 
       // Initialize CO₂ savings
       let _co2Contribution = 0;
 
-      // Calculate general CO₂ savings
-      if (_unit === "g" || _unit === "ml") {
-        _co2Contribution = ((_amount / 1000) / 7.1) * 0.264;
+      if (_unit !== "g" && _unit !== "ml" && _unit !== "kg" && _unit !== "l") {
+        return res.status(400).send({ error: "Unit must be 'g', 'ml', 'kg' or 'l'."});
       } else {
-        _co2Contribution = (_amount / 7.1) * 0.264;
+        // Calculate general CO₂ savings
+        if (_unit === "g" || _unit === "ml") {
+          _co2Contribution = ((_amount / 1000) / 7.1) * 0.264;
+        } else {
+          _co2Contribution = (_amount / 7.1) * 0.264;
+        }
       }
 
       // Calculate '_expirationDate' (7 days ahead of _creationDate)
@@ -165,7 +236,8 @@ export async function updateProduct(req, res) {
       let _expirationDate = expirationDateObject.toLocaleString(); // Format to string
 
       _product.title = _title;
-      _product.category = _category;
+      _product.consumables = _consumables;
+      _product.allergies = _allergies;
       _product.price = parseFloat(_price.toFixed(2));
       _product.amount = _amount;
       _product.unit = _unit;
