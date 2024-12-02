@@ -1,4 +1,26 @@
 services:
+  products:
+    container_name: products
+    build: ./products
+    volumes:
+      - ./products/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3013:3013"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+  categories:
+    container_name: categories
+    build: ./categories
+    volumes:
+      - ./categories/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3015:3015"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
   user:
     container_name: user
     build: ./user
