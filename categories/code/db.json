@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "List of categories",
+    "date": "9 September 2001"
+  },
+  "categories": {
+    "consumables": [
+    {"id": 1, "name": "Brood"},
+    {"id": 2, "name": "Conserven"},
+    {"id": 3, "name": "Dranken"},
+    {"id": 4, "name": "Fruit"},
+    {"id": 5, "name": "Groenten"},
+    {"id": 6, "name": "Kruiden"},
+    {"id": 7, "name": "Snacks"},
+    {"id": 8, "name": "Vis"},
+    {"id": 9, "name": "Vlees"},
+    {"id": 10, "name": "Zuivel"},
+    {"id": 11, "name": "Overig"}
+    ],
+    "allergies": [
+      {"id": 1, "name": "Eieren", "description": "Dit product bevat eieren."},
+      {"id": 2, "name": "Lupine", "description": "Dit product bevat lupine. Lupine behoort tot de peulvruchten familie."},
+      {"id": 3, "name": "Melk", "description": "Dit product bevat melk. De soort melk kan aangegeven worden in de product beschrijving."},
+      {"id": 4, "name": "Noten", "description": "Dit product bevat Noten. Noten behoren tot de notenfamilie."},
+      {"id": 5, "name": "Pinda's", "description": "Dit product bevat pinda's. Pinda behoort niet tot de notenfamilie."},
+      {"id": 6, "name": "Sesam", "description": "Dit product bevat sesam. Sesam behoort niet tot de notenfamilie."},
+      {"id": 7, "name": "Soja", "description": "Dit product bevat soja. Soja behoort tot de peulvruchten familie."},
+      {"id": 8, "name": "Tarwe", "description": "Dit product bevat tarwe. Granen die familie zijn van tarwe (spelt en khorasantarwe) behoren ook onder deze allergie."}
+    ]
+  }
+}
