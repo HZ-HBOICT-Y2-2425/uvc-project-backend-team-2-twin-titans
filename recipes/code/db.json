@@ -589,525 +589,525 @@
   "ingredients": [
     {
       "id": 1,
-      "quantity": 150,
+      "amount": 150,
       "name": "Pizzadeeg",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 2,
-      "quantity": 50,
+      "amount": 50,
       "name": "tomatensaus",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 3,
-      "quantity": 30,
+      "amount": 30,
       "name": "tomaten",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 4,
-      "quantity": 30,
+      "amount": 30,
       "name": "Paprika",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 5,
-      "quantity": 20,
+      "amount": 20,
       "name": "Artisjokharten",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 6,
-      "quantity": 25,
+      "amount": 25,
       "name": "Courgette",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 7,
-      "quantity": 25,
+      "amount": 25,
       "name": "Aubergine",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 8,
-      "quantity": 10,
+      "amount": 10,
       "name": "Rode ui",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 9,
-      "quantity": 15,
+      "amount": 15,
       "name": "Verse spinazie",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 10,
-      "quantity": 200,
+      "amount": 200,
       "name": "Knoflook",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 11,
-      "quantity": 50,
+      "amount": 50,
       "name": "Basilicum",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 12,
-      "quantity": 300,
+      "amount": 300,
       "name": "Gehakt",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 13,
-      "quantity": 100,
+      "amount": 100,
       "name": "Lasagnebladen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 14,
-      "quantity": 200,
+      "amount": 200,
       "name": "Tomatensaus",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 15,
-      "quantity": 100,
+      "amount": 100,
       "name": "Bechamelsaus",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 16,
-      "quantity": 150,
+      "amount": 150,
       "name": "Mozzarella",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 17,
-      "quantity": 50,
+      "amount": 50,
       "name": "Pasta",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 18,
-      "quantity": 50,
+      "amount": 50,
       "name": "Pijnboompitten",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 19,
-      "quantity": 100,
+      "amount": 100,
       "name": "Linzen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 20,
-      "quantity": 50,
+      "amount": 50,
       "name": "Quinoa",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 21,
-      "quantity": 30,
+      "amount": 30,
       "name": "Avocado",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 22,
-      "quantity": 100,
+      "amount": 100,
       "name": "Tomatenpuree",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 23,
-      "quantity": 50,
+      "amount": 50,
       "name": "Rode ui",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 24,
-      "quantity": 50,
+      "amount": 50,
       "name": "Paprika",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 25,
-      "quantity": 300,
+      "amount": 300,
       "name": "Aardappelen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 26,
-      "quantity": 200,
+      "amount": 200,
       "name": "Spinazie",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 27,
-      "quantity": 100,
+      "amount": 100,
       "name": "Peultjes",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 28,
-      "quantity": 200,
+      "amount": 200,
       "name": "Komkommer",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 29,
-      "quantity": 50,
+      "amount": 50,
       "name": "Salade",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 30,
-      "quantity": 200,
+      "amount": 200,
       "name": "Kipfilet",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 31,
-      "quantity": 100,
+      "amount": 100,
       "name": "Rijst",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 32,
-      "quantity": 50,
+      "amount": 50,
       "name": "Kokosmelk",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 33,
-      "quantity": 100,
+      "amount": 100,
       "name": "Gember",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 34,
-      "quantity": 200,
+      "amount": 200,
       "name": "Curry paste",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 35,
-      "quantity": 300,
+      "amount": 300,
       "name": "Tonijn",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 36,
-      "quantity": 100,
+      "amount": 100,
       "name": "Honing",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 37,
-      "quantity": 200,
+      "amount": 200,
       "name": "Sla",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 38,
-      "quantity": 300,
+      "amount": 300,
       "name": "Rundvlees",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 39,
-      "quantity": 50,
+      "amount": 50,
       "name": "Wortelen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 40,
-      "quantity": 100,
+      "amount": 100,
       "name": "Bouillon",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 41,
-      "quantity": 100,
+      "amount": 100,
       "name": "Roomkaas",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 42,
-      "quantity": 250,
+      "amount": 250,
       "name": "Cacao",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 43,
-      "quantity": 100,
+      "amount": 100,
       "name": "Vanille",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 44,
-      "quantity": 200,
+      "amount": 200,
       "name": "Boter",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 45,
-      "quantity": 200,
+      "amount": 200,
       "name": "Suiker",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 46,
-      "quantity": 100,
+      "amount": 100,
       "name": "Kaneel",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 47,
-      "quantity": 100,
+      "amount": 100,
       "name": "Kruidnagel",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 48,
-      "quantity": 200,
+      "amount": 200,
       "name": "Appels",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 49,
-      "quantity": 200,
+      "amount": 200,
       "name": "Zalm",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 50,
-      "quantity": 100,
+      "amount": 100,
       "name": "Courgette",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 51,
-      "quantity": 100,
+      "amount": 100,
       "name": "Paprika",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 52,
-      "quantity": 100,
+      "amount": 100,
       "name": "Tomaten",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 53,
-      "quantity": 50,
+      "amount": 50,
       "name": "Spinazie",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 54,
-      "quantity": 200,
+      "amount": 200,
       "name": "Zwarte bonen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 55,
-      "quantity": 150,
+      "amount": 150,
       "name": "Rode ui",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 56,
-      "quantity": 50,
+      "amount": 50,
       "name": "Basilicum",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 57,
-      "quantity": 100,
+      "amount": 100,
       "name": "Aardappelen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 58,
-      "quantity": 50,
+      "amount": 50,
       "name": "Peultjes",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 59,
-      "quantity": 200,
+      "amount": 200,
       "name": "Kipfilet",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 60,
-      "quantity": 100,
+      "amount": 100,
       "name": "Gember",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 61,
-      "quantity": 50,
+      "amount": 50,
       "name": "Koriander",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 62,
-      "quantity": 100,
+      "amount": 100,
       "name": "Limoen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 63,
-      "quantity": 150,
+      "amount": 150,
       "name": "Avocado",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 64,
-      "quantity": 50,
+      "amount": 50,
       "name": "Komkommer",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 65,
-      "quantity": 100,
+      "amount": 100,
       "name": "Rijst",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 66,
-      "quantity": 150,
+      "amount": 150,
       "name": "Kokosmelk",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 67,
-      "quantity": 250,
+      "amount": 250,
       "name": "Honing",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 68,
-      "quantity": 100,
+      "amount": 100,
       "name": "Pindakaas",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 69,
-      "quantity": 300,
+      "amount": 300,
       "name": "Amandelen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 70,
-      "quantity": 100,
+      "amount": 100,
       "name": "Boter",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 71,
-      "quantity": 50,
+      "amount": 50,
       "name": "Cacao",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 72,
-      "quantity": 200,
+      "amount": 200,
       "name": "Suiker",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 73,
-      "quantity": 100,
+      "amount": 100,
       "name": "Vanille-extract",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 74,
-      "quantity": 200,
+      "amount": 200,
       "name": "Citroen",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 75,
-      "quantity": 150,
+      "amount": 150,
       "name": "Kaneel",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 76,
-      "quantity": 100,
+      "amount": 100,
       "name": "Peper",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 77,
-      "quantity": 100,
+      "amount": 100,
       "name": "Paprika poeder",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 78,
-      "quantity": 50,
+      "amount": 50,
       "name": "Oregano",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 79,
-      "quantity": 100,
+      "amount": 100,
       "name": "Zout",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 80,
-      "quantity": 200,
+      "amount": 200,
       "name": "Olijfolie",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 81,
-      "quantity": 100,
+      "amount": 100,
       "name": "Azijn",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 82,
-      "quantity": 300,
+      "amount": 300,
       "name": "Witlof",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 83,
-      "quantity": 100,
+      "amount": 100,
       "name": "Munt",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 84,
-      "quantity": 100,
+      "amount": 100,
       "name": "Tomatenpuree",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 85,
-      "quantity": 100,
+      "amount": 100,
       "name": "Dille",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 86,
-      "quantity": 200,
+      "amount": 200,
       "name": "Feta",
-      "unit": "Gram"
+      "unit": "gram"
     },
     {
       "id": 87,
-      "quantity": 150,
+      "amount": 150,
       "name": "Griekse yoghurt",
-      "unit": "Gram"
+      "unit": "gram"
     }
   ]
 }
