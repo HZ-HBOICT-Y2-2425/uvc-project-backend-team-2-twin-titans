@@ -18,7 +18,8 @@
       "unit": "kg",
       "co2Contribution": 1.859,
       "description": "Hele bak vol met vleestomaten. Gister nog gekocht en wil gewoon doorverkopen aan mensen in de omgeving. Een x aantal vleestomaten kopen kan ook. Stuur maar gewoon een chat.",
-      "reserved": false,
+      "reserved": true,
+      "reservedByUserID": 85,
       "creationDate": "11/27/2024, 1:27:36 PM",
       "expirationDate": "12/4/2024, 1:27:36 PM"
     },
@@ -36,6 +37,7 @@
       "co2Contribution": 0.037,
       "description": "1 kilo tomaten. mmmm lekker.",
       "reserved": false,
+      "reservedByUserID": null,
       "creationDate": "11/28/2024, 11:02:59 AM",
       "expirationDate": "12/5/2024, 11:02:59 AM"
     }

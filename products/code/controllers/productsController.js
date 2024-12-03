@@ -111,6 +111,7 @@ export async function createProduct(req, res) {
   }
 
   let _reserved = false;
+  let _reservedByUserID = null;
 
   // Calculate '_expirationDate' (7 days ahead of _creationDate)
   let _creationDate = new Date().toLocaleString();
@@ -132,6 +133,7 @@ export async function createProduct(req, res) {
     co2Contribution: parseFloat(_co2Contribution.toFixed(3)),
     description: _description,
     reserved: _reserved,
+    reservedByUserID: _reservedByUserID,
     creationDate: _creationDate,
     expirationDate: _expirationDate
   };
@@ -142,26 +144,60 @@ export async function createProduct(req, res) {
   db.data.lastID = _id; // Update the last used ID
   await db.write(); // Save changes to the file
 
-  res.status(200).send(`Added product: ${JSON.stringify(_product)}`);
+  res.status(200).send(`Added product: ${JSON.stringify(_product.id)}`);
 }
 
 export async function reserveProduct(req, res) {
-  const { userid, productid } = req.params; // Get the userid and productid from the URL parameters
+  const { productid, userid, reservedbyuserid } = req.params; // Get the userid and productid from the URL parameters
 
   let _product = _products.find(product => product.id == productid); // Find the product with the matching ID
 
-  if (userid == _product.userID) {
-    if (!_product) {
-      return res.status(404).send({ error: "Product not found." });
-    } else if (_product.reserved) {
+  if (!_product) {
+    return res.status(404).send({ error: "Product not found." });
+  } else if (_product.userID == userid) {
+    if (_product.reserved) {
       return res.status(400).send({ error: "Product already reserved." });
     } else {
-      _product.reserved = true; // Set the product to reserved
+      _product.reservedByUserID = parseInt(reservedbyuserid); // Set the user who reserved the product
+
+      if (_product.reservedByUserID === null || isNaN(_product.reservedByUserID)) {
+        return res.status(400).send({ error: "Invalid user ID." });
+      } else if (_product.reservedByUserID === _product.userID) {
+        return res.status(400).send({ error: "Cannot reserve your own product." });
+      } else {
+        _product.reserved = true; // Set the product to reserved
+
+        // Update the JSON file
+        await db.write(); // Save changes to the file
+
+        res.status(200).send(`Reserved product: ${JSON.stringify(_product.id)} for user ${reservedbyuserid}`);
+      }
+    }
+  } else if (_product.userID != userid) {
+    return res.status(403).send({ error: "Unauthorized." });
+  } else {
+    return res.status(400).send({ error: "Invalid request." });
+  }
+}
+
+export async function unreserveProduct(req, res) {
+  const { productid, userid } = req.params; // Get the userid and productid from the URL parameters
+
+  let _product = _products.find(product => product.id == productid); // Find the product with the matching ID
+
+  if (!_product) {
+    return res.status(404).send({ error: "Product not found." });
+  } else if (_product.userID == userid) {
+    if (!_product.reserved) {
+      return res.status(400).send({ error: "Product is not reserved." });
+    } else {
+      _product.reserved = false; // Set the product to unreserved
+      _product.reservedByUserID = null; // Remove the user who reserved the product
 
       // Update the JSON file
       await db.write(); // Save changes to the file
 
-      res.status(200).send(`Reserved product: ${JSON.stringify(_product)}`);
+      res.status(200).send(`Unreserved product: ${JSON.stringify(_product.id)}`);
     }
   } else {
     return res.status(403).send({ error: "Unauthorized." });
@@ -169,13 +205,15 @@ export async function reserveProduct(req, res) {
 }
 
 export async function updateProduct(req, res) {
-  const { userid, productid } = req.params; // Get the userid and productid from the URL parameters
+  const { productid, userid } = req.params; // Get the userid and productid from the URL parameters
 
   let _product = _products.find(product => product.id == productid); // Find the product with the matching ID
 
-  if (userid == _product.userID) {
-    if (!_product) {
-      return res.status(404).send({ error: "Product not found." });
+  if (!_product) {
+    return res.status(404).send({ error: "Product not found." });
+  } else if (_product.userID == userid) {
+    if (_product.reserved) {
+      return res.status(400).send({ error: "Product is reserved." });
     } else {
       let _title = req.query.title;
       let _consumables = req.query.consumables;
@@ -195,7 +233,7 @@ export async function updateProduct(req, res) {
         _consumables = _consumables.split(',').map(Number);
 
         if (_consumables === null) {
-          return res.status(400).send({ error: "Consumables must be ID number." });
+          return res.status(400).send({ error: "Consumables must be valid ID number." });
         }
       } else if (typeof _consumables === 'number') {
         _consumables = [_consumables];
@@ -208,7 +246,7 @@ export async function updateProduct(req, res) {
         _allergies = _allergies.split(',').map(Number);
 
         if (_allergies === null) {
-          return res.status(400).send({ error: "Allergies must be ID number." });
+          return res.status(400).send({ error: "Allergies must be valid ID number." });
         }
       } else if (typeof _allergies === 'number') {
         _allergies = [_allergies];
@@ -249,7 +287,15 @@ export async function updateProduct(req, res) {
       // Update the JSON file
       await db.write(); // Save changes to the file
 
-      res.status(200).send(`Edited product: ${JSON.stringify(_product)}`);
+      res.status(200).send(`Edited product: ${JSON.stringify(_product.id)}`);
+    }
+  }
+
+  if (userid == _product.userID) {
+    if (!_product) {
+      return res.status(404).send({ error: "Product not found." });
+    } else {
+      
     }
   } else {
     return res.status(403).send({ error: "Unauthorized." });
@@ -270,14 +316,9 @@ export async function deleteProduct(req, res) {
       // Update the JSON file
       await db.write(); // Save changes to the file
 
-      res.status(200).send(`Deleted product with ID ${productid}`);
+      res.status(200).send(`Deleted product: ${productid}`);
     }
   } else {
     return res.status(403).send({ error: "Unauthorized." });
   }
-}
-
-export async function test(req, res) {
-  console.log(req.body);
-  res.status(200).send("test reached");
 }
