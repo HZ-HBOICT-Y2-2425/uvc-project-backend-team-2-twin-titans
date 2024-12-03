@@ -4,7 +4,7 @@ import { checkName } from '../middleware/exampleMiddleware.js';
 const router = express.Router();
 
 // routes
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.json('hi');
 });
 router.get('/example', checkName, responseExample);
