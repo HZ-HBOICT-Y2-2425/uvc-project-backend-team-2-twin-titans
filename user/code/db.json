@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "titel": "Lijst van alle gebruikers & chats",
+    "datum": "November 2024"
+  },
+  "gebruikers": [
+    {
+      "id": 1,
+      "naam": "test1",
+      "wachtwoord": "testtest",
+      "email": "test1@email.com",
+      "postcode": "1234AB",
+      "co2bijdrage": 1234
+    },
+    {
+      "id": 2,
+      "naam": "test2",
+      "wachtwoord": "testtest",
+      "email": "test2@email.com",
+      "postcode": "1234AC",
+      "co2bijdrage": 1235
+    },
+    {
+      "id": 3,
+      "naam": "test3",
+      "wachtwoord": "testtest",
+      "email": "test3@email.com",
+      "postcode": "1234AB",
+      "co2bijdrage": 12345
+    }
+  ],
+  "chats": [
+    {
+      "id": 1,
+      "gebruikers": [
+        1,
+        2
+      ],
+      "berichten": [
+        {
+          "id": 1,
+          "gebruiker": 1,
+          "tekst": "hallo",
+          "tijdstip": "12:00"
+        },
+        {
+          "id": 2,
+          "gebruiker": 2,
+          "tekst": "hoi",
+          "tijdstip": "12:01"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "gebruikers": [
+        1,
+        3
+      ],
+      "berichten": [
+        {
+          "id": 1,
+          "gebruiker": 1,
+          "tekst": "hallo",
+          "tijdstip": "12:03"
+        },
+        {
+          "id": 2,
+          "gebruiker": 3,
+          "tekst": "flikker op",
+          "tijdstip": "12:04"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "gebruikers": [
+        1,
+        2
+      ],
+      "berichten": []
+    }
+  ]
+}
