@@ -3,11 +3,101 @@
     "tile": "List of recipes",
     "date": "September 2024"
   },
+  "categories": {
+    "consumables": [
+      {
+        "id": 1,
+        "name": "Brood"
+      },
+      {
+        "id": 2,
+        "name": "Conserven"
+      },
+      {
+        "id": 3,
+        "name": "Dranken"
+      },
+      {
+        "id": 4,
+        "name": "Fruit"
+      },
+      {
+        "id": 5,
+        "name": "Groenten"
+      },
+      {
+        "id": 6,
+        "name": "Kruiden"
+      },
+      {
+        "id": 7,
+        "name": "Snacks"
+      },
+      {
+        "id": 8,
+        "name": "Vis"
+      },
+      {
+        "id": 9,
+        "name": "Vlees"
+      },
+      {
+        "id": 10,
+        "name": "Zuivel"
+      },
+      {
+        "id": 11,
+        "name": "Overig"
+      }
+    ],
+    "allergies": [
+      {
+        "id": 1,
+        "name": "Eieren",
+        "description": "Dit product bevat eieren."
+      },
+      {
+        "id": 2,
+        "name": "Lupine",
+        "description": "Dit product bevat lupine. Lupine behoort tot de peulvruchten familie."
+      },
+      {
+        "id": 3,
+        "name": "Melk",
+        "description": "Dit product bevat melk. De soort melk kan aangegeven worden in de product beschrijving."
+      },
+      {
+        "id": 4,
+        "name": "Noten",
+        "description": "Dit product bevat Noten. Noten behoren tot de notenfamilie."
+      },
+      {
+        "id": 5,
+        "name": "Pinda's",
+        "description": "Dit product bevat pinda's. Pinda behoort niet tot de notenfamilie."
+      },
+      {
+        "id": 6,
+        "name": "Sesam",
+        "description": "Dit product bevat sesam. Sesam behoort niet tot de notenfamilie."
+      },
+      {
+        "id": 7,
+        "name": "Soja",
+        "description": "Dit product bevat soja. Soja behoort tot de peulvruchten familie."
+      },
+      {
+        "id": 8,
+        "name": "Tarwe",
+        "description": "Dit product bevat tarwe. Granen die familie zijn van tarwe (spelt en khorasantarwe) behoren ook onder deze allergie."
+      }
+    ]
+  },
   "recipes": [
     {
       "id": 1,
       "name": "Groente pizza",
-      "description": "Beleef de pure smaak van de natuur met onze overheerlijke groente pizza! Een knapperige, goudbruin gebakken bodem wordt royaal belegd met een kleurrijke mix van verse groenten: sappige tomaten, knapperige paprika's, romige artisjokharten, en heerlijk gegrilde courgette en aubergine. Afgetopt met een vleugje rode ui, verse spinazieblaadjes en een snufje oregano voor die perfecte Italiaanse touch. Voor de ultieme smaakervaring smelten we er een zachte laag mozzarella overheen, maar deze pizza is ook geweldig zonder kaas, voor de vegan liefhebbers. Een smakelijke en voedzame keuze voor iedereen!",
+      "description": "1. Verwarm de oven voor op 220°C. 2. Rol het pizzadeeg uit op een bakplaat. 3. Snijd de tomaten, paprika's, artisjokharten, courgette en aubergine in dunne plakjes. 4. Verspreid de tomatenpuree over het deeg en beleg met de gesneden groenten. 5. Voeg de rode ui, spinazie en oregano toe. 6. Strooi de mozzarella over de groenten en bak de pizza 15-20 minuten tot de rand goudbruin is. 7. Serveer direct.",
       "reviewID": [
         1,
         3,
@@ -15,11 +105,14 @@
         5
       ],
       "category": [
-        "fruit",
-        "groenten"
+        4,
+        5,
+        11
       ],
       "seasonID": 1,
-      "allergyID": 1,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
         1,
@@ -36,7 +129,7 @@
     {
       "id": 2,
       "name": "Tomaten soep",
-      "description": "Deze tomatensoep is absoluut heerlijk! De smaak van rijpe, verse tomaten komt perfect naar voren, met een zachte, fluweelachtige textuur die precies goed is. De subtiele kruiden en een vleugje basilicum maken het helemaal af, waardoor het een authentieke, huisgemaakte smaak krijgt. Perfect als voorgerecht of als lichte maaltijd. Een aanrader voor iedereen die houdt van een klassieke soep met een moderne twist!",
+      "description": "1. Verhit de olie in een grote pan en bak de ui en knoflook totdat ze zacht zijn. 2. Voeg de gesneden tomaten en groentenbouillon toe en breng aan de kook. 3. Laat 15-20 minuten sudderen totdat de smaken goed gemengd zijn. 4. Pureer de soep met een staafmixer tot een gladde textuur. 5. Voeg een beetje basilicum en peper naar smaak toe. 6. Serveer warm met een beetje crème fraiche.",
       "reviewID": [
         1,
         3,
@@ -44,11 +137,14 @@
         5
       ],
       "category": [
-        "fruit",
-        "groenten"
+        4,
+        5,
+        6
       ],
       "seasonID": 2,
-      "allergyID": 2,
+      "allergyID": [
+        2
+      ],
       "favorites": true,
       "ingredients": [
         2,
@@ -60,7 +156,7 @@
     {
       "id": 3,
       "name": "Lasagne",
-      "description": "De lasagne is een ware smaakexplosie! Perfecte lagen van romige bechamelsaus, rijke tomatensaus, sappig gehakt en verse pasta smelten samen tot een hemelse maaltijd. De topping van gesmolten kaas is goudbruin gebakken en zorgt voor de perfecte balans tussen hartig en romig. Alles is perfect op smaak gebracht met kruiden zoals oregano en basilicum, waardoor het voelt alsof je in een authentiek Italiaans restaurant zit. Een must-try voor elke lasagneliefhebber!",
+      "description": "1. Verwarm de oven voor op 180°C. 2. Kook de lasagnebladen volgens de verpakking. 3. Bak het gehakt met ui, knoflook en kruiden in een grote pan. Voeg de tomatensaus toe en laat 15 minuten sudderen. 4. Maak de bechamelsaus door boter te smelten, bloem toe te voegen, en langzaam melk toe te voegen terwijl je roert. 5. Begin met het opbouwen van de lasagne door eerst een laag tomatensaus, gevolgd door lasagnebladen, dan bechamelsaus. Herhaal dit proces totdat alles op is. Eindig met een laag bechamelsaus en geraspte kaas. 6. Bak 30-40 minuten in de oven.",
       "reviewID": [
         1,
         3,
@@ -68,11 +164,15 @@
         5
       ],
       "category": [
-        "fruit",
-        "groenten"
+        10,
+        9,
+        2,
+        11
       ],
       "seasonID": 3,
-      "allergyID": 3,
+      "allergyID": [
+        3
+      ],
       "favorites": false,
       "ingredients": [
         12,
@@ -85,18 +185,21 @@
     {
       "id": 4,
       "name": "Pasta Primavera",
-      "description": "Deze frisse en lichte pasta is een combinatie van al dente pasta en een rijke saus van verse groenten zoals courgette, paprika en cherrytomaten. Het gerecht wordt afgemaakt met een handvol verse basilicum en een vleugje olijfolie. Een smaakvolle maaltijd, perfect voor een zomerse dag.",
+      "description": "1. Kook de pasta volgens de verpakking. 2. Snijd de groenten (courgette, paprika, en tomaten) in stukjes. 3. Bak de groenten in een pan met olijfolie totdat ze zacht zijn. 4. Meng de gekookte pasta met de groenten en voeg basilicum toe. 5. Serveer met een beetje extra olijfolie en een snufje zout.",
       "reviewID": [
         2,
         4,
         5
       ],
       "category": [
-        "groenten",
-        "pasta"
+        5,
+        4,
+        11
       ],
       "seasonID": 1,
-      "allergyID": 1,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
         6,
@@ -109,18 +212,20 @@
     {
       "id": 5,
       "name": "Vegetarische Burger",
-      "description": "Een smaakvolle vegetarische burger met een vulling van linzen en quinoa, gecombineerd met een frisse salade, tomaten en een zelfgemaakte avocado saus. Perfect voor een gezonde lunch of diner.",
+      "description": "1. Kook de quinoa en linzen volgens de verpakking. 2. Meng de gekookte quinoa en linzen met de fijngesneden ui, kruiden en bloem. 3. Vorm het mengsel in burgers en bak ze in een pan met olie tot ze goudbruin zijn. 4. Serveer de burgers op een broodje met sla, tomaten en een zelfgemaakte avocado saus.",
       "reviewID": [
         1,
         3,
         5
       ],
       "category": [
-        "vegetarisch",
-        "burgers"
+        2,
+        11
       ],
       "seasonID": 2,
-      "allergyID": 2,
+      "allergyID": [
+        2
+      ],
       "favorites": false,
       "ingredients": [
         19,
@@ -133,18 +238,22 @@
     {
       "id": 6,
       "name": "Aubergine Parmigiana",
-      "description": "Een Italiaans klassiek gerecht van gebakken aubergine, belegd met tomatensaus en geraspte kaas, in de oven gebakken tot een heerlijke goudbruine korst.",
+      "description": "1. Snijd de aubergines in plakken en bak ze in olie tot ze goudbruin zijn. 2. Maak de tomatensaus door ui, knoflook, en tomaten te bakken. 3. Leg een laag gebakken aubergine in een ovenschaal, gevolgd door tomatensaus en geraspte kaas. Herhaal dit proces totdat alles op is. 4. Bak in de oven tot de kaas gesmolten en goudbruin is.",
       "reviewID": [
         2,
         4,
         5
       ],
       "category": [
-        "groenten",
-        "italiaans"
+        10,
+        9,
+        6,
+        2
       ],
       "seasonID": 3,
-      "allergyID": 3,
+      "allergyID": [
+        3
+      ],
       "favorites": true,
       "ingredients": [
         7,
@@ -157,18 +266,20 @@
     {
       "id": 7,
       "name": "Spinazie en Feta Quiche",
-      "description": "Een heerlijke quiche gevuld met verse spinazie, romige feta en een knapperige korst. Perfect voor een brunch of lichte maaltijd.",
+      "description": "1. Verwarm de oven voor op 180°C. 2. Meng de spinazie, feta, eieren, en kruiden in een kom. 3. Giet het mengsel in een quichevorm met een voorgebakken korst. 4. Bak 30-40 minuten in de oven totdat de vulling stevig is.",
       "reviewID": [
         1,
         2,
         4
       ],
       "category": [
-        "vegetarisch",
-        "quiche"
+        11,
+        5
       ],
       "seasonID": 1,
-      "allergyID": 3,
+      "allergyID": [
+        3
+      ],
       "favorites": true,
       "ingredients": [
         9,
@@ -181,18 +292,20 @@
     {
       "id": 8,
       "name": "Vegan Tacos",
-      "description": "Deze smakelijke vegan taco's zijn gevuld met een vulling van zwarte bonen, maïs, avocado, en een frisse koriandersaus. Serveer met een beetje limoensap voor extra frisheid.",
+      "description": "1. Verwarm de taco shells volgens de verpakking. 2. Meng de zwarte bonen, maïs en kruiden in een kom. 3. Vul de taco shells met de bonen-maïs mengsel en voeg avocado en koriandersaus toe. 4. Serveer met een beetje limoensap voor extra frisheid.",
       "reviewID": [
         3,
         5,
         2
       ],
       "category": [
-        "vegan",
-        "mexicaans"
+        5,
+        9
       ],
       "seasonID": 2,
-      "allergyID": 1,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
         26,
@@ -205,18 +318,21 @@
     {
       "id": 9,
       "name": "Chili sin Carne",
-      "description": "Een stevige en smaakvolle chili gemaakt met linzen, paprika en tomaten, geserveerd met rijst. Perfect voor een warme, gezonde maaltijd.",
+      "description": "1. Verhit olie in een pan en bak de ui en knoflook. 2. Voeg de paprika, linzen, tomaten en kruiden toe en laat sudderen voor 30 minuten. 3. Serveer met rijst.",
       "reviewID": [
         1,
         3,
         4
       ],
       "category": [
-        "vegan",
-        "chili"
+        4,
+        5,
+        11
       ],
       "seasonID": 3,
-      "allergyID": 3,
+      "allergyID": [
+        3
+      ],
       "favorites": false,
       "ingredients": [
         31,
@@ -229,18 +345,21 @@
     {
       "id": 10,
       "name": "Falafel met Hummus",
-      "description": "Heerlijke zelfgemaakte falafel geserveerd met romige hummus, een frisse salade en pittige tahin-saus. Een voedzame en lekkere maaltijd.",
+      "description": "1. Maak de falafel door de kikkererwten met ui, knoflook, en kruiden te mengen en in balletjes te rollen. 2. Bak de falafel in olie tot ze goudbruin zijn. 3. Serveer met hummus, een frisse salade, en tahinsaus.",
       "reviewID": [
         2,
         4,
         5
       ],
       "category": [
-        "vegan",
-        "middle eastern"
+        11,
+        8,
+        4
       ],
       "seasonID": 2,
-      "allergyID": 1,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
         34,
@@ -251,136 +370,144 @@
     },
     {
       "id": 11,
-      "name": "Caesar Salad",
-      "description": "Een klassieke Caesar salade met krokante croutons, romige dressing en geschaafde Parmezaanse kaas.",
+      "name": "Aubergine Parmigiana",
+      "description": "Een Italiaanse klassieker met aubergine, tomatensaus en gesmolten mozzarella, ideaal voor een vullende lunch of diner.",
       "reviewID": [
-        1,
-        5,
-        3
+        2,
+        5
       ],
       "category": [
-        "salades",
-        "italiaans"
+        9,
+        10
       ],
-      "seasonID": 1,
-      "allergyID": 3,
+      "seasonID": 2,
+      "allergyID": [
+        4
+      ],
       "favorites": false,
       "ingredients": [
-        38,
-        39,
-        40,
-        41,
-        42
+        24,
+        25,
+        26,
+        27
       ]
     },
     {
       "id": 12,
-      "name": "Pasta Pesto",
-      "description": "Een eenvoudige maar smaakvolle pasta met verse basilicum pesto, geserveerd met geroosterde pijnboompitten en parmezaan.",
+      "name": "Pesto Pasta",
+      "description": "Pasta met een heerlijke zelfgemaakte pesto, geserveerd met geroosterde pijnboompitten en Parmezaanse kaas.",
       "reviewID": [
-        2,
-        5,
-        3
+        1,
+        4
       ],
       "category": [
-        "pasta",
-        "italiaans"
+        5,
+        11
       ],
-      "seasonID": 1,
-      "allergyID": 1,
+      "seasonID": 3,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
-        17,
-        43,
-        44
+        28,
+        29,
+        30,
+        31
       ]
     },
     {
       "id": 13,
-      "name": "Griekse Salade",
-      "description": "Een frisse Griekse salade met komkommer, tomaat, olijven, rode ui, en feta kaas, perfect voor een zomerse maaltijd.",
+      "name": "Falafel",
+      "description": "Knapperige falafelballetjes gemaakt van kikkererwten, kruiden en specerijen, geserveerd met een frisse yoghurtsaus.",
       "reviewID": [
-        4,
-        5,
-        3
+        2,
+        5
       ],
       "category": [
-        "salades",
-        "mediterraan"
+        6,
+        11
       ],
       "seasonID": 1,
-      "allergyID": 2,
+      "allergyID": [
+        3
+      ],
       "favorites": true,
       "ingredients": [
-        45,
-        46,
-        47,
-        48
+        32,
+        33,
+        34,
+        35
       ]
     },
     {
       "id": 14,
-      "name": "Zalm met groenten",
-      "description": "Een gezonde maaltijd van gegrilde zalm, geserveerd met gegrilde groenten zoals courgette, paprika en tomaten.",
+      "name": "Vegan Buddha Bowl",
+      "description": "Een voedzame maaltijd in een kom met quinoa, avocado, gegrilde groenten, hummus en een tahin-dressing.",
       "reviewID": [
         1,
-        3,
-        5
+        3
       ],
       "category": [
-        "vis",
-        "gezond"
+        5,
+        11
       ],
-      "seasonID": 3,
-      "allergyID": 1,
+      "seasonID": 2,
+      "allergyID": [
+        2
+      ],
       "favorites": false,
       "ingredients": [
-        49,
-        50,
-        51,
-        52
+        36,
+        37,
+        38,
+        39
       ]
     },
     {
       "id": 15,
-      "name": "Vegan lasagne",
-      "description": "Een heerlijke vegan lasagne met groenten en een romige bechamelsaus gemaakt van plantaardige melk. Perfect voor een comfortmaaltijd.",
+      "name": "Tofu Stir-Fry",
+      "description": "Kruidige tofu gewokt met groenten zoals broccoli, paprika en wortelen in een sojasaus en sesamolie.",
       "reviewID": [
-        2,
-        4,
+        1,
         5
       ],
       "category": [
-        "vegan",
-        "italiaans"
+        6,
+        11
       ],
-      "seasonID": 2,
-      "allergyID": 1,
+      "seasonID": 3,
+      "allergyID": [
+        4
+      ],
       "favorites": true,
       "ingredients": [
-        53,
-        54,
-        55,
-        56
+        40,
+        41,
+        42,
+        43
       ]
     },
     {
       "id": 16,
-      "name": "Pompoensoep",
-      "description": "Een verwarmende pompoensoep met een vleugje kaneel en nootmuskaat, perfect voor de herfst.",
+      "name": "Gevulde Paprika's",
+      "description": "Heerlijk gevulde paprika's met een mengsel van quinoa, groenten en kruiden, een gezond en smakelijk gerecht.",
       "reviewID": [
         1,
-        4,
         5
       ],
       "category": [
-        "soepen",
-        "herfst"
+        10,
+        9,
+        6
       ],
-      "seasonID": 3,
-      "allergyID": 2,
-      "favorites": true,
+      "seasonID": 1,
+      "allergyID": [
+        4
+      ],
+      "favorites": false,
       "ingredients": [
+        56,
         57,
         58,
         59
@@ -388,201 +515,221 @@
     },
     {
       "id": 17,
-      "name": "Kip curry",
-      "description": "Een smaakvolle curry met sappige kip, kokosmelk, en een mix van exotische specerijen. Heerlijk geserveerd met rijst.",
+      "name": "Risotto met Champignons",
+      "description": "Een romige risotto met verse champignons en een vleugje witte wijn, een luxe gerecht voor iedere gelegenheid.",
       "reviewID": [
         2,
-        5,
-        3
+        4,
+        5
       ],
       "category": [
-        "vlees",
-        "curry"
+        10,
+        9
       ],
-      "seasonID": 2,
-      "allergyID": 3,
-      "favorites": false,
+      "seasonID": 3,
+      "allergyID": [
+        1
+      ],
+      "favorites": true,
       "ingredients": [
         60,
         61,
-        62
+        62,
+        63,
+        64
       ]
     },
     {
       "id": 18,
-      "name": "Tuna Salad",
-      "description": "Een snelle en eenvoudige salade met tonijn, groene sla, komkommer en een lichte vinaigrette.",
+      "name": "Vegan Curry",
+      "description": "Een rijke en romige vegan curry met kokosmelk, zoete aardappel en spinazie, geserveerd met basmati rijst.",
       "reviewID": [
-        4,
-        2,
-        5
+        1,
+        4
       ],
       "category": [
-        "salades",
-        "vlees"
+        5,
+        6
       ],
-      "seasonID": 1,
-      "allergyID": 3,
-      "favorites": true,
+      "seasonID": 2,
+      "allergyID": [
+        3
+      ],
+      "favorites": false,
       "ingredients": [
-        63,
-        64,
         65,
-        66
+        66,
+        67,
+        68
       ]
     },
     {
       "id": 19,
-      "name": "Beef Stew",
-      "description": "Een stoofpot met mals rundvlees, aardappelen, wortels, en een rijke bouillon. Perfect voor de wintermaanden.",
+      "name": "Paddenstoelen Stroganoff",
+      "description": "Een vegetarische variant van de klassieke stroganoff, gemaakt met champignons, uien en een romige saus.",
       "reviewID": [
-        1,
-        5,
-        3
+        2,
+        3,
+        5
       ],
       "category": [
-        "vlees",
-        "stoofpot"
+        10,
+        9
       ],
-      "seasonID": 3,
-      "allergyID": 2,
-      "favorites": false,
+      "seasonID": 1,
+      "allergyID": [
+        4
+      ],
+      "favorites": true,
       "ingredients": [
-        67,
-        68,
-        69
+        69,
+        70,
+        71,
+        72,
+        73
       ]
     },
     {
       "id": 20,
-      "name": "Chocolade cake",
-      "description": "Een heerlijke, luchtige chocoladetaart met een romige ganache en een beetje vanille. Perfect voor elke gelegenheid.",
+      "name": "Zucchini Noodles",
+      "description": "Gezonde courgette-noedels geserveerd met een frisse tomatensaus en kruiden, perfect voor een lichte lunch.",
       "reviewID": [
-        5,
         3,
-        2
+        4
       ],
       "category": [
-        "dessert",
-        "chocolade"
+        11,
+        5
       ],
       "seasonID": 2,
-      "allergyID": 1,
+      "allergyID": [
+        1
+      ],
       "favorites": true,
       "ingredients": [
-        70,
-        71,
-        72
+        74,
+        75,
+        76,
+        77
       ]
     },
     {
       "id": 21,
-      "name": "Apple Pie",
-      "description": "Een klassieke appeltaart met een rijke bodem en een vulling van gekarameliseerde appels, kaneel en een vleugje citroen.",
+      "name": "Baked Sweet Potatoes",
+      "description": "Gezonde gebakken zoete aardappelen geserveerd met een topping van crème fraîche en verse kruiden.",
       "reviewID": [
         1,
-        5,
-        4
+        5
       ],
       "category": [
-        "dessert",
-        "fruit"
+        11,
+        9
       ],
       "seasonID": 3,
-      "allergyID": 3,
-      "favorites": true,
+      "allergyID": [
+        2
+      ],
+      "favorites": false,
       "ingredients": [
-        73,
-        74,
-        75
+        78,
+        79,
+        80
       ]
     },
     {
       "id": 22,
-      "name": "Pavlova",
-      "description": "Een lichte meringue-taart met een romige vulling en vers fruit zoals kiwi, aardbeien en passievrucht.",
+      "name": "Minestrone Soep",
+      "description": "Een rijke en smaakvolle minestronesoep, gevuld met groenten, bonen en pasta.",
       "reviewID": [
+        2,
+        5
+      ],
+      "category": [
         4,
-        3,
-        2
-      ],
-      "category": [
-        "dessert",
-        "fruit"
-      ],
-      "seasonID": 2,
-      "allergyID": 1,
-      "favorites": false,
-      "ingredients": [
-        76,
-        77,
-        78
-      ]
-    },
-    {
-      "id": 23,
-      "name": "Carrot Cake",
-      "description": "Een smaakvolle worteltaart met een zachte roomkaasglazuur, perfect voor een middagthee.",
-      "reviewID": [
-        3,
-        5,
-        1
-      ],
-      "category": [
-        "dessert",
-        "groenten"
+        11
       ],
       "seasonID": 1,
-      "allergyID": 3,
+      "allergyID": [
+        3
+      ],
       "favorites": true,
       "ingredients": [
-        79,
-        80,
-        81
-      ]
-    },
-    {
-      "id": 24,
-      "name": "Pumpkin Pie",
-      "description": "Een heerlijke pompoentaart met een specerijachtige vulling van pompoenpuree, kaneel en kruidnagel.",
-      "reviewID": [
-        1,
-        5,
-        2
-      ],
-      "category": [
-        "dessert",
-        "herfst"
-      ],
-      "seasonID": 3,
-      "allergyID": 2,
-      "favorites": false,
-      "ingredients": [
+        81,
         82,
         83,
         84
       ]
     },
     {
-      "id": 25,
-      "name": "Banoffee Pie",
-      "description": "Een decadent banoffee-taartje met een bodem van koekjes, een vulling van bananen, karamel en slagroom.",
+      "id": 23,
+      "name": "Frittata met Spinazie",
+      "description": "Een heerlijke frittata gevuld met verse spinazie en een mix van eieren en kaas, een perfecte brunch optie.",
       "reviewID": [
-        2,
         4,
         5
       ],
       "category": [
-        "dessert",
-        "fruit"
+        11,
+        10
       ],
       "seasonID": 2,
-      "allergyID": 1,
+      "allergyID": [
+        4
+      ],
       "favorites": true,
       "ingredients": [
         85,
         86,
-        87
+        87,
+        88
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Vegan Burritos",
+      "description": "Gezonde vegan burrito's gevuld met rijst, bonen, avocado, en salsa, perfect voor een snel diner.",
+      "reviewID": [
+        2,
+        3
+      ],
+      "category": [
+        5,
+        6
+      ],
+      "seasonID": 3,
+      "allergyID": [
+        1
+      ],
+      "favorites": false,
+      "ingredients": [
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Moussaka",
+      "description": "Een traditionele Griekse moussaka met lagen van aubergine, aardappelen, en een rijke vleessaus, afgewerkt met een bechamelsaus.",
+      "reviewID": [
+        3,
+        5
+      ],
+      "category": [
+        9,
+        10
+      ],
+      "seasonID": 2,
+      "allergyID": [
+        3
+      ],
+      "favorites": true,
+      "ingredients": [
+        93,
+        94,
+        95,
+        96
       ]
     }
   ],
@@ -595,57 +742,57 @@
     },
     {
       "id": 2,
-      "amount": 50,
-      "name": "tomatensaus",
-      "unit": "gram"
+      "amount": 2,
+      "name": "Tomaten",
+      "unit": "stuks"
     },
     {
       "id": 3,
-      "amount": 30,
-      "name": "tomaten",
-      "unit": "gram"
-    },
-    {
-      "id": 4,
-      "amount": 30,
+      "amount": 100,
       "name": "Paprika",
       "unit": "gram"
     },
     {
-      "id": 5,
-      "amount": 20,
+      "id": 4,
+      "amount": 50,
       "name": "Artisjokharten",
       "unit": "gram"
     },
     {
-      "id": 6,
-      "amount": 25,
+      "id": 5,
+      "amount": 100,
       "name": "Courgette",
       "unit": "gram"
     },
     {
-      "id": 7,
-      "amount": 25,
+      "id": 6,
+      "amount": 50,
       "name": "Aubergine",
       "unit": "gram"
     },
     {
-      "id": 8,
-      "amount": 10,
+      "id": 7,
+      "amount": 50,
       "name": "Rode ui",
       "unit": "gram"
     },
     {
+      "id": 8,
+      "amount": 50,
+      "name": "Spinazieblaadjes",
+      "unit": "gram"
+    },
+    {
       "id": 9,
-      "amount": 15,
-      "name": "Verse spinazie",
+      "amount": 100,
+      "name": "Mozzarella",
       "unit": "gram"
     },
     {
       "id": 10,
-      "amount": 200,
-      "name": "Knoflook",
-      "unit": "gram"
+      "amount": 1,
+      "name": "Fles tomatenpuree",
+      "unit": "fles"
     },
     {
       "id": 11,
@@ -656,457 +803,511 @@
     {
       "id": 12,
       "amount": 300,
-      "name": "Gehakt",
-      "unit": "gram"
-    },
-    {
-      "id": 13,
-      "amount": 100,
       "name": "Lasagnebladen",
       "unit": "gram"
     },
     {
-      "id": 14,
-      "amount": 200,
-      "name": "Tomatensaus",
+      "id": 13,
+      "amount": 300,
+      "name": "Rundergehakt",
       "unit": "gram"
+    },
+    {
+      "id": 14,
+      "amount": 500,
+      "name": "Tomatensaus",
+      "unit": "ml"
     },
     {
       "id": 15,
-      "amount": 100,
+      "amount": 250,
       "name": "Bechamelsaus",
-      "unit": "gram"
+      "unit": "ml"
     },
     {
       "id": 16,
-      "amount": 150,
-      "name": "Mozzarella",
+      "amount": 100,
+      "name": "Parmezaanse kaas",
       "unit": "gram"
     },
     {
       "id": 17,
-      "amount": 50,
-      "name": "Pasta",
+      "amount": 100,
+      "name": "Spaghetti",
       "unit": "gram"
     },
     {
       "id": 18,
       "amount": 50,
-      "name": "Pijnboompitten",
-      "unit": "gram"
+      "name": "Cherrytomaten",
+      "unit": "stuks"
     },
     {
       "id": 19,
-      "amount": 100,
+      "amount": 200,
       "name": "Linzen",
       "unit": "gram"
     },
     {
       "id": 20,
-      "amount": 50,
+      "amount": 100,
       "name": "Quinoa",
       "unit": "gram"
     },
     {
       "id": 21,
-      "amount": 30,
+      "amount": 1,
       "name": "Avocado",
-      "unit": "gram"
+      "unit": "stuk"
     },
     {
       "id": 22,
-      "amount": 100,
-      "name": "Tomatenpuree",
+      "amount": 10,
+      "name": "Tomatenketchup",
       "unit": "gram"
     },
     {
       "id": 23,
       "amount": 50,
-      "name": "Rode ui",
+      "name": "Tahinsaus",
       "unit": "gram"
     },
     {
       "id": 24,
       "amount": 50,
-      "name": "Paprika",
+      "name": "Feta",
       "unit": "gram"
     },
     {
       "id": 25,
-      "amount": 300,
-      "name": "Aardappelen",
-      "unit": "gram"
+      "amount": 4,
+      "name": "Eieren",
+      "unit": "stuks"
     },
     {
       "id": 26,
-      "amount": 200,
-      "name": "Spinazie",
-      "unit": "gram"
-    },
-    {
-      "id": 27,
       "amount": 100,
-      "name": "Peultjes",
-      "unit": "gram"
-    },
-    {
-      "id": 28,
-      "amount": 200,
-      "name": "Komkommer",
-      "unit": "gram"
-    },
-    {
-      "id": 29,
-      "amount": 50,
-      "name": "Salade",
-      "unit": "gram"
-    },
-    {
-      "id": 30,
-      "amount": 200,
-      "name": "Kipfilet",
-      "unit": "gram"
-    },
-    {
-      "id": 31,
-      "amount": 100,
-      "name": "Rijst",
-      "unit": "gram"
-    },
-    {
-      "id": 32,
-      "amount": 50,
-      "name": "Kokosmelk",
-      "unit": "gram"
-    },
-    {
-      "id": 33,
-      "amount": 100,
-      "name": "Gember",
-      "unit": "gram"
-    },
-    {
-      "id": 34,
-      "amount": 200,
-      "name": "Curry paste",
-      "unit": "gram"
-    },
-    {
-      "id": 35,
-      "amount": 300,
-      "name": "Tonijn",
-      "unit": "gram"
-    },
-    {
-      "id": 36,
-      "amount": 100,
-      "name": "Honing",
-      "unit": "gram"
-    },
-    {
-      "id": 37,
-      "amount": 200,
-      "name": "Sla",
-      "unit": "gram"
-    },
-    {
-      "id": 38,
-      "amount": 300,
-      "name": "Rundvlees",
-      "unit": "gram"
-    },
-    {
-      "id": 39,
-      "amount": 50,
-      "name": "Wortelen",
-      "unit": "gram"
-    },
-    {
-      "id": 40,
-      "amount": 100,
-      "name": "Bouillon",
-      "unit": "gram"
-    },
-    {
-      "id": 41,
-      "amount": 100,
-      "name": "Roomkaas",
-      "unit": "gram"
-    },
-    {
-      "id": 42,
-      "amount": 250,
-      "name": "Cacao",
-      "unit": "gram"
-    },
-    {
-      "id": 43,
-      "amount": 100,
-      "name": "Vanille",
-      "unit": "gram"
-    },
-    {
-      "id": 44,
-      "amount": 200,
-      "name": "Boter",
-      "unit": "gram"
-    },
-    {
-      "id": 45,
-      "amount": 200,
-      "name": "Suiker",
-      "unit": "gram"
-    },
-    {
-      "id": 46,
-      "amount": 100,
-      "name": "Kaneel",
-      "unit": "gram"
-    },
-    {
-      "id": 47,
-      "amount": 100,
-      "name": "Kruidnagel",
-      "unit": "gram"
-    },
-    {
-      "id": 48,
-      "amount": 200,
-      "name": "Appels",
-      "unit": "gram"
-    },
-    {
-      "id": 49,
-      "amount": 200,
-      "name": "Zalm",
-      "unit": "gram"
-    },
-    {
-      "id": 50,
-      "amount": 100,
-      "name": "Courgette",
-      "unit": "gram"
-    },
-    {
-      "id": 51,
-      "amount": 100,
-      "name": "Paprika",
-      "unit": "gram"
-    },
-    {
-      "id": 52,
-      "amount": 100,
-      "name": "Tomaten",
-      "unit": "gram"
-    },
-    {
-      "id": 53,
-      "amount": 50,
-      "name": "Spinazie",
-      "unit": "gram"
-    },
-    {
-      "id": 54,
-      "amount": 200,
       "name": "Zwarte bonen",
       "unit": "gram"
     },
     {
-      "id": 55,
-      "amount": 150,
-      "name": "Rode ui",
-      "unit": "gram"
-    },
-    {
-      "id": 56,
+      "id": 27,
       "amount": 50,
-      "name": "Basilicum",
+      "name": "Maïs",
       "unit": "gram"
     },
     {
-      "id": 57,
-      "amount": 100,
-      "name": "Aardappelen",
-      "unit": "gram"
+      "id": 28,
+      "amount": 1,
+      "name": "Limoen",
+      "unit": "stuk"
     },
     {
-      "id": 58,
-      "amount": 50,
-      "name": "Peultjes",
-      "unit": "gram"
-    },
-    {
-      "id": 59,
-      "amount": 200,
-      "name": "Kipfilet",
-      "unit": "gram"
-    },
-    {
-      "id": 60,
-      "amount": 100,
-      "name": "Gember",
-      "unit": "gram"
-    },
-    {
-      "id": 61,
+      "id": 29,
       "amount": 50,
       "name": "Koriander",
       "unit": "gram"
     },
     {
-      "id": 62,
-      "amount": 100,
-      "name": "Limoen",
+      "id": 30,
+      "amount": 150,
+      "name": "Zwarte bonen",
       "unit": "gram"
     },
     {
-      "id": 63,
+      "id": 31,
+      "amount": 200,
+      "name": "Rijst",
+      "unit": "gram"
+    },
+    {
+      "id": 32,
+      "amount": 150,
+      "name": "Paprika",
+      "unit": "gram"
+    },
+    {
+      "id": 33,
+      "amount": 2,
+      "name": "Knoflook",
+      "unit": "teentjes"
+    },
+    {
+      "id": 34,
+      "amount": 6,
+      "name": "Falafel",
+      "unit": "stuks"
+    },
+    {
+      "id": 35,
+      "amount": 100,
+      "name": "Hummus",
+      "unit": "gram"
+    },
+    {
+      "id": 36,
+      "amount": 50,
+      "name": "Tahin",
+      "unit": "gram"
+    },
+    {
+      "id": 37,
+      "amount": 150,
+      "name": "Groene salade",
+      "unit": "gram"
+    },
+    {
+      "id": 38,
+      "amount": 150,
+      "name": "Krokante croutons",
+      "unit": "gram"
+    },
+    {
+      "id": 39,
+      "amount": 100,
+      "name": "Parmezaanse kaas",
+      "unit": "gram"
+    },
+    {
+      "id": 40,
+      "amount": 100,
+      "name": "Caesardressing",
+      "unit": "ml"
+    },
+    {
+      "id": 41,
+      "amount": 2,
+      "name": "Eieren",
+      "unit": "stuks"
+    },
+    {
+      "id": 42,
+      "amount": 50,
+      "name": "Lente-uitjes",
+      "unit": "gram"
+    },
+    {
+      "id": 43,
+      "amount": 50,
+      "name": "Basilicum",
+      "unit": "gram"
+    },
+    {
+      "id": 44,
+      "amount": 50,
+      "name": "Parmezaanse kaas",
+      "unit": "gram"
+    },
+    {
+      "id": 45,
+      "amount": 100,
+      "name": "Komkommer",
+      "unit": "gram"
+    },
+    {
+      "id": 46,
+      "amount": 50,
+      "name": "Tomaten",
+      "unit": "gram"
+    },
+    {
+      "id": 47,
+      "amount": 50,
+      "name": "Olijven",
+      "unit": "gram"
+    },
+    {
+      "id": 48,
+      "amount": 50,
+      "name": "Rode ui",
+      "unit": "gram"
+    },
+    {
+      "id": 49,
+      "amount": 200,
+      "name": "Zalmfilets",
+      "unit": "gram"
+    },
+    {
+      "id": 50,
+      "amount": 200,
+      "name": "Geroosterde groenten",
+      "unit": "gram"
+    },
+    {
+      "id": 51,
+      "amount": 150,
+      "name": "Sla",
+      "unit": "gram"
+    },
+    {
+      "id": 52,
+      "amount": 1,
+      "name": "Citroen",
+      "unit": "stuk"
+    },
+    {
+      "id": 53,
       "amount": 150,
       "name": "Avocado",
       "unit": "gram"
     },
     {
-      "id": 64,
-      "amount": 50,
+      "id": 54,
+      "amount": 100,
       "name": "Komkommer",
       "unit": "gram"
     },
     {
-      "id": 65,
+      "id": 55,
       "amount": 100,
-      "name": "Rijst",
+      "name": "Wortel",
+      "unit": "gram"
+    },
+    {
+      "id": 56,
+      "amount": 200,
+      "name": "Paprika",
+      "unit": "gram"
+    },
+    {
+      "id": 57,
+      "amount": 100,
+      "name": "Quinoa",
+      "unit": "gram"
+    },
+    {
+      "id": 58,
+      "amount": 50,
+      "name": "Tomaten",
+      "unit": "gram"
+    },
+    {
+      "id": 59,
+      "amount": 200,
+      "name": "Spinazie",
+      "unit": "gram"
+    },
+    {
+      "id": 60,
+      "amount": 200,
+      "name": "Risotto rijst",
+      "unit": "gram"
+    },
+    {
+      "id": 61,
+      "amount": 200,
+      "name": "Champignons",
+      "unit": "gram"
+    },
+    {
+      "id": 62,
+      "amount": 50,
+      "name": "Witte wijn",
+      "unit": "ml"
+    },
+    {
+      "id": 63,
+      "amount": 50,
+      "name": "Parmezaanse kaas",
+      "unit": "gram"
+    },
+    {
+      "id": 64,
+      "amount": 50,
+      "name": "Pijnboompitten",
+      "unit": "gram"
+    },
+    {
+      "id": 65,
+      "amount": 200,
+      "name": "Curry pasta",
       "unit": "gram"
     },
     {
       "id": 66,
       "amount": 150,
       "name": "Kokosmelk",
-      "unit": "gram"
+      "unit": "ml"
     },
     {
       "id": 67,
-      "amount": 250,
-      "name": "Honing",
+      "amount": 200,
+      "name": "Zoete aardappel",
       "unit": "gram"
     },
     {
       "id": 68,
       "amount": 100,
-      "name": "Pindakaas",
+      "name": "Spinazie",
       "unit": "gram"
     },
     {
       "id": 69,
-      "amount": 300,
-      "name": "Amandelen",
+      "amount": 200,
+      "name": "Champignons",
       "unit": "gram"
     },
     {
       "id": 70,
-      "amount": 100,
-      "name": "Boter",
+      "amount": 200,
+      "name": "Kipfilet",
       "unit": "gram"
     },
     {
       "id": 71,
-      "amount": 50,
-      "name": "Cacao",
-      "unit": "gram"
+      "amount": 1,
+      "name": "Broccoli",
+      "unit": "stuk"
     },
     {
       "id": 72,
-      "amount": 200,
-      "name": "Suiker",
+      "amount": 50,
+      "name": "Zalm",
       "unit": "gram"
     },
     {
       "id": 73,
-      "amount": 100,
-      "name": "Vanille-extract",
+      "amount": 250,
+      "name": "Penne pasta",
       "unit": "gram"
     },
     {
       "id": 74,
-      "amount": 200,
-      "name": "Citroen",
-      "unit": "gram"
+      "amount": 150,
+      "name": "Tomatensaus",
+      "unit": "ml"
     },
     {
       "id": 75,
-      "amount": 150,
-      "name": "Kaneel",
+      "amount": 100,
+      "name": "Rucola",
       "unit": "gram"
     },
     {
       "id": 76,
-      "amount": 100,
-      "name": "Peper",
+      "amount": 50,
+      "name": "Zongedroogde tomaten",
       "unit": "gram"
     },
     {
       "id": 77,
-      "amount": 100,
-      "name": "Paprika poeder",
-      "unit": "gram"
+      "amount": 50,
+      "name": "Olijfolie",
+      "unit": "ml"
     },
     {
       "id": 78,
       "amount": 50,
-      "name": "Oregano",
-      "unit": "gram"
+      "name": "Balsamicoazijn",
+      "unit": "ml"
     },
     {
       "id": 79,
-      "amount": 100,
-      "name": "Zout",
-      "unit": "gram"
+      "amount": 1,
+      "name": "Citroen",
+      "unit": "stuk"
     },
     {
       "id": 80,
-      "amount": 200,
-      "name": "Olijfolie",
-      "unit": "gram"
+      "amount": 50,
+      "name": "Chilipepers",
+      "unit": "stuk"
     },
     {
       "id": 81,
-      "amount": 100,
-      "name": "Azijn",
+      "amount": 150,
+      "name": "Courgette",
       "unit": "gram"
     },
     {
       "id": 82,
-      "amount": 300,
-      "name": "Witlof",
+      "amount": 100,
+      "name": "Mozzarella",
       "unit": "gram"
     },
     {
       "id": 83,
       "amount": 100,
-      "name": "Munt",
+      "name": "Tomaten",
       "unit": "gram"
     },
     {
       "id": 84,
-      "amount": 100,
-      "name": "Tomatenpuree",
+      "amount": 200,
+      "name": "Rode ui",
       "unit": "gram"
     },
     {
       "id": 85,
       "amount": 100,
-      "name": "Dille",
+      "name": "Spinazie",
       "unit": "gram"
     },
     {
       "id": 86,
-      "amount": 200,
-      "name": "Feta",
+      "amount": 100,
+      "name": "Rundergehakt",
       "unit": "gram"
     },
     {
       "id": 87,
+      "amount": 50,
+      "name": "Boerenkool",
+      "unit": "gram"
+    },
+    {
+      "id": 88,
       "amount": 150,
-      "name": "Griekse yoghurt",
+      "name": "Zwarte bonen",
+      "unit": "gram"
+    },
+    {
+      "id": 89,
+      "amount": 200,
+      "name": "Lente-ui",
+      "unit": "gram"
+    },
+    {
+      "id": 90,
+      "amount": 50,
+      "name": "Witlof",
+      "unit": "gram"
+    },
+    {
+      "id": 91,
+      "amount": 150,
+      "name": "Paprika",
+      "unit": "gram"
+    },
+    {
+      "id": 92,
+      "amount": 100,
+      "name": "Rucola",
+      "unit": "gram"
+    },
+    {
+      "id": 93,
+      "amount": 200,
+      "name": "Groene paprika",
+      "unit": "gram"
+    },
+    {
+      "id": 94,
+      "amount": 250,
+      "name": "Mozzarella",
+      "unit": "gram"
+    },
+    {
+      "id": 95,
+      "amount": 100,
+      "name": "Gerookte kipfilet",
+      "unit": "gram"
+    },
+    {
+      "id": 96,
+      "amount": 50,
+      "name": "Basilicum",
       "unit": "gram"
     }
   ]

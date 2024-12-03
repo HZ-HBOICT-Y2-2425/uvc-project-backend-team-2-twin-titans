@@ -1,6 +1,7 @@
 import express from 'express';
 import { checkName } from '../middleware/exampleMiddleware.js';
-import { getAllRecipes, getRecipeById, test } from '../controllers/recipesController.js';
+import cors from 'cors';
+import { getAllRecipes, getRecipeById } from '../controllers/recipesController.js';
 const router = express.Router();
 
 // recipes routes
