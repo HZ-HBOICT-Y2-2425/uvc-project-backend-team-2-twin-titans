@@ -1,0 +1,13 @@
+{
+  "name": "uvc-project-backend-team-2-twin-titans",
+  "version": "1.0.0",
+  "description": "In this backend example for a project, a folder is created for each micoservice.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

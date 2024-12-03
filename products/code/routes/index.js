@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import * as productsController from '../controllers/productsController.js';
 const router = express.Router();
+router.use(cors());
 
 router.get('/', cors(), productsController.getProducts);
 
@@ -9,7 +10,9 @@ router.post('/create', cors(), productsController.createProduct);
 
 router.get('/user/:userid', cors(), productsController.getProductsByUserID);
 
-router.get('/product/:productid', cors(), productsController.getProduct);
+router.get('/producten', productsController.getProducts);
+
+router.get('/producten/:productid', cors(), productsController.getProduct);
 
 router.put('/update/:productid/userid', cors(), productsController.updateProduct);
 
