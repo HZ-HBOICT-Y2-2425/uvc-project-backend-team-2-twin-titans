@@ -10,10 +10,19 @@ const db = await JSONFilePreset('db.json', defaultData)
 const _products = db.data.products
 
 export async function getProducts(req, res) {
-  // Map product IDs to URLs
-  let _productUrls = _products.map(product => `products/${product.id}`);
+  console.log('Fetching products...');
+  try {
+    if (!_products) {
+      console.log('No products data available.');
+      return res.status(404).send({ error: "No products found." });
+    }
 
-  res.status(200).send(_productUrls); // Return the list of product URLs
+    console.log('Products fetched successfully:', _products);
+    return res.status(200).send(_products);
+  } catch (error) {
+    console.error('Error occurred in getProducts:', error);
+    return res.status(500).send({ error: "An error occurred while fetching products." });
+  }
 }
 
 export async function getProduct(req, res) {

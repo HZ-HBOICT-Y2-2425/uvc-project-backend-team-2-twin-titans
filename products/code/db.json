@@ -40,6 +40,168 @@
       "reservedByUserID": null,
       "creationDate": "11/28/2024, 11:02:59 AM",
       "expirationDate": "12/5/2024, 11:02:59 AM"
+    },
+    {
+      "id": 3,
+      "userID": 45,
+      "title": "Appels 5kg",
+      "consumables": [
+        3
+      ],
+      "allergies": [],
+      "price": 7.50,
+      "amount": 5,
+      "unit": "kg",
+      "co2Contribution": 0.9,
+      "description": "Verse appels in een handige 5kg verpakking. Perfect voor het maken van appeltaart of gewoon om te snacken.",
+      "reserved": true,
+      "reservedByUserID": 92,
+      "creationDate": "11/30/2024, 9:15:21 AM",
+      "expirationDate": "12/10/2024, 9:15:21 AM"
+    },
+    {
+      "id": 4,
+      "userID": 15,
+      "title": "Aardbeien 1kg",
+      "consumables": [
+        2
+      ],
+      "allergies": [],
+      "price": 3.25,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 0.5,
+      "description": "Frisse en zoete aardbeien, perfect om te eten of te gebruiken in een salade.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/29/2024, 3:20:45 PM",
+      "expirationDate": "12/6/2024, 3:20:45 PM"
+    },
+    {
+      "id": 5,
+      "userID": 33,
+      "title": "Wortelen 2kg",
+      "consumables": [
+        5
+      ],
+      "allergies": [],
+      "price": 2.50,
+      "amount": 2,
+      "unit": "kg",
+      "co2Contribution": 0.8,
+      "description": "Verse wortelen, ideaal voor soep of om rauw te eten als snack.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/30/2024, 10:45:12 AM",
+      "expirationDate": "12/7/2024, 10:45:12 AM"
+    },
+    {
+      "id": 6,
+      "userID": 56,
+      "title": "Broccoli 1kg",
+      "consumables": [
+        6
+      ],
+      "allergies": [],
+      "price": 4.00,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 1.2,
+      "description": "Knapperige broccoli, rijk aan vitamines en perfect voor verschillende gerechten.",
+      "reserved": true,
+      "reservedByUserID": 78,
+      "creationDate": "11/28/2024, 8:12:00 AM",
+      "expirationDate": "12/5/2024, 8:12:00 AM"
+    },
+    {
+      "id": 7,
+      "userID": 21,
+      "title": "Sinaasappels 3kg",
+      "consumables": [
+        7
+      ],
+      "allergies": [],
+      "price": 6.00,
+      "amount": 3,
+      "unit": "kg",
+      "co2Contribution": 1.5,
+      "description": "Sinaasappels die je smaakpapillen verwennen. Perfect voor verse jus.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/30/2024, 12:34:56 PM",
+      "expirationDate": "12/7/2024, 12:34:56 PM"
+    },
+    {
+      "id": 8,
+      "userID": 89,
+      "title": "Paprika's 1kg",
+      "consumables": [
+        8
+      ],
+      "allergies": [],
+      "price": 2.80,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 0.9,
+      "description": "Vers gesneden paprika's. Ideaal voor roerbakgerechten en salades.",
+      "reserved": true,
+      "reservedByUserID": 61,
+      "creationDate": "11/27/2024, 4:22:13 PM",
+      "expirationDate": "12/4/2024, 4:22:13 PM"
+    },
+    {
+      "id": 9,
+      "userID": 12,
+      "title": "Courgette 1kg",
+      "consumables": [
+        9
+      ],
+      "allergies": [],
+      "price": 3.75,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 1.1,
+      "description": "Verse courgettes, ideaal voor diverse gerechten of als bijgerecht.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/30/2024, 2:08:30 PM",
+      "expirationDate": "12/7/2024, 2:08:30 PM"
+    },
+    {
+      "id": 10,
+      "userID": 43,
+      "title": "Uien 2kg",
+      "consumables": [
+        10
+      ],
+      "allergies": [],
+      "price": 1.90,
+      "amount": 2,
+      "unit": "kg",
+      "co2Contribution": 0.5,
+      "description": "Twee kilo uien, perfect voor koken of bakken.",
+      "reserved": true,
+      "reservedByUserID": 77,
+      "creationDate": "11/29/2024, 5:30:45 PM",
+      "expirationDate": "12/6/2024, 5:30:45 PM"
+    },
+    {
+      "id": 11,
+      "userID": 7,
+      "title": "Knoflook 500g",
+      "consumables": [
+        11
+      ],
+      "allergies": [],
+      "price": 2.50,
+      "amount": 0.5,
+      "unit": "kg",
+      "co2Contribution": 0.4,
+      "description": "Verse knoflook in een 500g verpakking. Onmisbaar voor veel gerechten.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/30/2024, 3:45:21 PM",
+      "expirationDate": "12/7/2024, 3:45:21 PM"
     }
   ]
 }
