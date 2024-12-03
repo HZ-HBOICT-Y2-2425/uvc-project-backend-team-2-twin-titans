@@ -12,7 +12,7 @@ router.get('/user/:userid', cors(), productsController.getProductsByUserID);
 
 router.get('/producten', productsController.getProducts);
 
-router.get('/product/:productid', cors(), productsController.getProduct);
+router.get('/producten/:productid', cors(), productsController.getProduct);
 
 router.put('/update/:productid/userid', cors(), productsController.updateProduct);
 
