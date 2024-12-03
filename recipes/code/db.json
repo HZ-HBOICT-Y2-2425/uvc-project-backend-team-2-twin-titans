@@ -50,6 +50,24 @@
         "name": "Overig"
       }
     ],
+    "seasons": [
+      {
+        "id": 1,
+        "name": "Winter"
+      },
+      {
+        "id": 2,
+        "name": "Lente"
+      },
+      {
+        "id": 3,
+        "name": "Zomer"
+      },
+      {
+        "id": 4,
+        "name": "Herfst"
+      }
+    ],
     "allergies": [
       {
         "id": 1,
@@ -109,7 +127,10 @@
         5,
         11
       ],
-      "seasonID": 1,
+      "seasonID": [
+        1,
+        4
+      ],
       "allergyID": [
         1
       ],
@@ -124,7 +145,8 @@
         7,
         8,
         9
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1049620/pexels-photo-1049620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 2,
@@ -141,7 +163,9 @@
         5,
         6
       ],
-      "seasonID": 2,
+      "seasonID": [
+        1
+      ],
       "allergyID": [
         2
       ],
@@ -151,7 +175,8 @@
         3,
         10,
         11
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/29007238/pexels-photo-29007238/free-photo-of-hartige-traditionele-solyanka-soep-met-brood.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 3,
@@ -169,7 +194,9 @@
         2,
         11
       ],
-      "seasonID": 3,
+      "seasonID": [
+        1
+      ],
       "allergyID": [
         3
       ],
@@ -180,7 +207,8 @@
         14,
         15,
         16
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 4,
@@ -196,7 +224,9 @@
         4,
         11
       ],
-      "seasonID": 1,
+      "seasonID": [
+        1
+      ],
       "allergyID": [
         1
       ],
@@ -207,7 +237,8 @@
         3,
         17,
         18
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 5,
@@ -222,7 +253,10 @@
         2,
         11
       ],
-      "seasonID": 2,
+      "seasonID": [
+        1,
+        2
+      ],
       "allergyID": [
         2
       ],
@@ -233,7 +267,8 @@
         21,
         22,
         23
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/6546029/pexels-photo-6546029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 6,
@@ -250,7 +285,9 @@
         6,
         2
       ],
-      "seasonID": 3,
+      "seasonID": [
+        1
+      ],
       "allergyID": [
         3
       ],
@@ -261,7 +298,8 @@
         8,
         16,
         12
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/19674153/pexels-photo-19674153/free-photo-of-bord-plaat-restaurant-eetgelegenheid.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 7,
@@ -276,7 +314,9 @@
         11,
         5
       ],
-      "seasonID": 1,
+      "seasonID": [
+        1
+      ],
       "allergyID": [
         3
       ],
@@ -287,7 +327,8 @@
         17,
         24,
         25
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/5419305/pexels-photo-5419305.jpeg"
     },
     {
       "id": 8,
@@ -302,7 +343,10 @@
         5,
         9
       ],
-      "seasonID": 2,
+      "seasonID": [
+        1,
+        4
+      ],
       "allergyID": [
         1
       ],
@@ -313,7 +357,8 @@
         28,
         29,
         30
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/4955091/pexels-photo-4955091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 9,
@@ -329,7 +374,10 @@
         5,
         11
       ],
-      "seasonID": 3,
+      "seasonID": [
+        1,
+        4
+      ],
       "allergyID": [
         3
       ],
@@ -340,7 +388,8 @@
         3,
         4,
         33
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1618906/pexels-photo-1618906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 10,
@@ -356,7 +405,7 @@
         8,
         4
       ],
-      "seasonID": 2,
+      "seasonID": [1],
       "allergyID": [
         1
       ],
@@ -366,7 +415,8 @@
         35,
         36,
         37
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/6252726/pexels-photo-6252726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 11,
@@ -380,7 +430,7 @@
         9,
         10
       ],
-      "seasonID": 2,
+      "seasonID": [1],
       "allergyID": [
         4
       ],
@@ -390,7 +440,8 @@
         25,
         26,
         27
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/23359716/pexels-photo-23359716/free-photo-of-maaltijd-doos-box-kaas.jpeg"
     },
     {
       "id": 12,
@@ -404,7 +455,7 @@
         5,
         11
       ],
-      "seasonID": 3,
+      "seasonID": [2],
       "allergyID": [
         1
       ],
@@ -414,7 +465,8 @@
         29,
         30,
         31
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/8105120/pexels-photo-8105120.jpeg"
     },
     {
       "id": 13,
@@ -428,7 +480,7 @@
         6,
         11
       ],
-      "seasonID": 1,
+      "seasonID": [2],
       "allergyID": [
         3
       ],
@@ -438,7 +490,8 @@
         33,
         34,
         35
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/6275187/pexels-photo-6275187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 14,
@@ -452,7 +505,7 @@
         5,
         11
       ],
-      "seasonID": 2,
+      "seasonID": [2],
       "allergyID": [
         2
       ],
@@ -462,7 +515,8 @@
         37,
         38,
         39
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 15,
@@ -476,7 +530,7 @@
         6,
         11
       ],
-      "seasonID": 3,
+      "seasonID": [2],
       "allergyID": [
         4
       ],
@@ -486,7 +540,8 @@
         41,
         42,
         43
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/5848469/pexels-photo-5848469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 16,
@@ -501,7 +556,7 @@
         9,
         6
       ],
-      "seasonID": 1,
+      "seasonID": [2],
       "allergyID": [
         4
       ],
@@ -511,7 +566,8 @@
         57,
         58,
         59
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1438540/pexels-photo-1438540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 17,
@@ -526,7 +582,7 @@
         10,
         9
       ],
-      "seasonID": 3,
+      "seasonID": [2,3],
       "allergyID": [
         1
       ],
@@ -537,7 +593,8 @@
         62,
         63,
         64
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/15058970/pexels-photo-15058970/free-photo-of-voedsel-eten-bord-plaat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 18,
@@ -551,7 +608,7 @@
         5,
         6
       ],
-      "seasonID": 2,
+      "seasonID": [2,3],
       "allergyID": [
         3
       ],
@@ -561,7 +618,8 @@
         66,
         67,
         68
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/6544375/pexels-photo-6544375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 19,
@@ -576,7 +634,7 @@
         10,
         9
       ],
-      "seasonID": 1,
+      "seasonID": [2,3],
       "allergyID": [
         4
       ],
@@ -587,7 +645,8 @@
         71,
         72,
         73
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 20,
@@ -601,7 +660,7 @@
         11,
         5
       ],
-      "seasonID": 2,
+      "seasonID": [2,3],
       "allergyID": [
         1
       ],
@@ -611,7 +670,8 @@
         75,
         76,
         77
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/7496818/pexels-photo-7496818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 21,
@@ -625,7 +685,7 @@
         11,
         9
       ],
-      "seasonID": 3,
+      "seasonID": [2,3],
       "allergyID": [
         2
       ],
@@ -634,7 +694,8 @@
         78,
         79,
         80
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 22,
@@ -648,7 +709,7 @@
         4,
         11
       ],
-      "seasonID": 1,
+      "seasonID": [3],
       "allergyID": [
         3
       ],
@@ -658,7 +719,8 @@
         82,
         83,
         84
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/11519066/pexels-photo-11519066.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 23,
@@ -672,7 +734,7 @@
         11,
         10
       ],
-      "seasonID": 2,
+      "seasonID": [3],
       "allergyID": [
         4
       ],
@@ -682,7 +744,8 @@
         86,
         87,
         88
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/5639282/pexels-photo-5639282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 24,
@@ -696,7 +759,7 @@
         5,
         6
       ],
-      "seasonID": 3,
+      "seasonID": [3],
       "allergyID": [
         1
       ],
@@ -706,7 +769,8 @@
         90,
         91,
         92
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "id": 25,
@@ -720,7 +784,7 @@
         9,
         10
       ],
-      "seasonID": 2,
+      "seasonID": [3],
       "allergyID": [
         3
       ],
@@ -730,7 +794,8 @@
         94,
         95,
         96
-      ]
+      ],
+      "image_url": "https://images.pexels.com/photos/19145679/pexels-photo-19145679/free-photo-of-maaltijd-glas-drinkglas-doos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ],
   "ingredients": [
