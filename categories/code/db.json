@@ -5,17 +5,17 @@
   },
   "categories": {
     "consumables": [
-    {"id": 1, "name": "Brood"},
-    {"id": 2, "name": "Conserven"},
-    {"id": 3, "name": "Dranken"},
-    {"id": 4, "name": "Fruit"},
-    {"id": 5, "name": "Groenten"},
-    {"id": 6, "name": "Kruiden"},
-    {"id": 7, "name": "Snacks"},
-    {"id": 8, "name": "Vis"},
-    {"id": 9, "name": "Vlees"},
-    {"id": 10, "name": "Zuivel"},
-    {"id": 11, "name": "Overig"}
+      {"id": 1, "name": "Brood"},
+      {"id": 2, "name": "Conserven"},
+      {"id": 3, "name": "Dranken"},
+      {"id": 4, "name": "Fruit"},
+      {"id": 5, "name": "Groenten"},
+      {"id": 6, "name": "Kruiden"},
+      {"id": 7, "name": "Snacks"},
+      {"id": 8, "name": "Vis"},
+      {"id": 9, "name": "Vlees"},
+      {"id": 10, "name": "Zuivel"},
+      {"id": 11, "name": "Overig"}
     ],
     "allergies": [
       {"id": 1, "name": "Eieren", "description": "Dit product bevat eieren."},
