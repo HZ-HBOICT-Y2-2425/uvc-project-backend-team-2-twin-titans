@@ -1,84 +1,84 @@
 {
   "meta": {
-    "titel": "Lijst van alle gebruikers & chats",
-    "datum": "November 2024"
+    "title": "List of all users & chats",
+    "date": "September 11th 2001"
   },
-  "gebruikers": [
+  "users": [
     {
       "id": 1,
-      "naam": "test1",
-      "wachtwoord": "testtest",
+      "name": "test1",
+      "password": "testtest",
       "email": "test1@email.com",
-      "postcode": "1234AB",
-      "co2bijdrage": 1234
+      "zipcode": "1234AB",
+      "co2Contribution": 0
     },
     {
       "id": 2,
-      "naam": "test2",
-      "wachtwoord": "testtest",
+      "name": "test2",
+      "password": "testtest",
       "email": "test2@email.com",
-      "postcode": "1234AC",
-      "co2bijdrage": 1235
+      "zipcode": "1234AC",
+      "co2Contribution": 0
     },
     {
       "id": 3,
-      "naam": "test3",
-      "wachtwoord": "testtest",
+      "name": "test3",
+      "password": "testtest",
       "email": "test3@email.com",
-      "postcode": "1234AB",
-      "co2bijdrage": 12345
+      "zipcode": "1234AB",
+      "co2Contribution": 0
     }
   ],
   "chats": [
     {
       "id": 1,
-      "gebruikers": [
+      "users": [
         1,
         2
       ],
-      "berichten": [
+      "messages": [
         {
           "id": 1,
-          "gebruiker": 1,
-          "tekst": "hallo",
-          "tijdstip": "12:00"
+          "user": 1,
+          "text": "hallo",
+          "timestamp": "12:00"
         },
         {
           "id": 2,
-          "gebruiker": 2,
-          "tekst": "hoi",
-          "tijdstip": "12:01"
+          "user": 2,
+          "text": "hoi",
+          "timestamp": "12:01"
         }
       ]
     },
     {
       "id": 2,
-      "gebruikers": [
+      "users": [
         1,
         3
       ],
-      "berichten": [
+      "messages": [
         {
           "id": 1,
-          "gebruiker": 1,
-          "tekst": "hallo",
-          "tijdstip": "12:03"
+          "user": 1,
+          "text": "hallo",
+          "timestamp": "12:03"
         },
         {
           "id": 2,
-          "gebruiker": 3,
-          "tekst": "flikker op",
-          "tijdstip": "12:04"
+          "user": 3,
+          "text": "flikker op",
+          "timestamp": "12:04"
         }
       ]
     },
     {
       "id": 3,
-      "gebruikers": [
+      "users": [
         1,
         2
       ],
-      "berichten": []
+      "messages": []
     }
   ]
 }

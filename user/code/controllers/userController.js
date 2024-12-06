@@ -1,37 +1,80 @@
 import { JSONFilePreset } from "lowdb/node";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
-const defaultData = { meta: {"titel": "Lijst van alle gebruikers & chats", "datum": "November 2024"}, gebruikers : [] };
+const defaultData = { meta: {"title": "List of all users & chats", "date": "November 2024"}, users : [] };
 const db = await JSONFilePreset('db.json', defaultData);
-const gebruikers = db.data.gebruikers;
+const users = db.data.users;
 
 export async function getAllUsers(req, res) {
-  res.status(200).send(gebruikers);
+  res.status(200).send(users);
 }
 
 export async function createUser(req, res) {
-  let id = gebruikers[gebruikers.length - 1].id + 1;
-  let naam = req.query.name;
-  let wachtwoord = req.query.password;
+  let body = req.body;
+  console.log(body);
+  
+  let id = getUniqueId(users);
+  let name = req.query.name;
+  let password = req.query.password;
   let email = req.query.email;
-  let postcode = req.query.zipcode;
-  let co2bijdrage = Number(req.query.co2Contribution);
-  if (naam && wachtwoord && email && postcode && co2bijdrage) {
-    let gebruiker = {id: id, naam: naam, wachtwoord: wachtwoord, email: email, postcode: postcode, co2bijdrage: co2bijdrage};
-    gebruikers.push(gebruiker);
+  let zipcode = req.query.zipcode;
+  if (name && password && email && zipcode) {
+    let user = {id: id, name: name, password: password, email: email, zipcode: zipcode, co2Contribution: 0};
+    users.push(user);
     await db.write();
-    res.status(201).send(`Deze gebruiker is toegevoegt: ${JSON.stringify(gebruiker)}`);
+    res.status(200).send(user);
   } else {
     res.status(404).send('Gebruiker mist een parameter');
   }
 }
 
+export async function updateCo2ByUserId(req, res) {
+  let id = Number(req.params.id);
+  let co2 = Number(req.query.co2);
+  let user = users.find(user => user.id === id);
+  if (user) {
+    user.co2Contribution += co2;
+    await db.write();
+    res.status(200).send(`Deze gebruiker is verandert: ${JSON.stringify(user)}`);
+  } else {
+    res.status(404).send('Gebruiker niet gevonden');
+  }
+}
+
 export async function getUserById(req, res) {
-  let id = req.params.id;
-  let gebruiker = gebruikers.find(gebruiker => gebruiker.id == id);
-  if (gebruiker) {
-    res.status(200).send(gebruiker);
+  let id = Number(req.params.id);
+  let user = users.find(user => user.id === id);
+  getResponseHandler(res, user, user, 'Gebruiker niet gevonden');
+}
+
+export async function login(req, res) {
+  let userName = req.query.user;
+  let password = req.query.password;
+  let user = users.find(user => user.name === userName);
+  if (user === undefined) { user = users.find(user => user.email === userName); }
+  if (user) {
+    getResponseHandler(res, user.password === password, user, 'Wachtwoord is incorrect');
+  } else {
+    res.status(404).send('Gebruikersnaam niet gevonden');
+  }
+}
+
+export async function updateUser(req, res) {
+  let id = Number(req.params.id);
+  let user = users.find(user => user.id === id);
+  let name = req.query.name;
+  let password = req.query.password;
+  let email = req.query.email;
+  let zipcode = req.query.zipcode;
+  if (user) {
+    user.name = name;
+    user.password = password;
+    user.email = email;
+    user.zipcode = zipcode;
+    await db.write();
+    res.status(200).send(user);
   } else {
     res.status(404).send('Gebruiker niet gevonden');
   }

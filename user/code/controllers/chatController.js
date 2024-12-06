@@ -1,10 +1,10 @@
 import { JSONFilePreset } from "lowdb/node";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Read or create db.json
 // defaultData specifies the structure of the database
-const defaultData = { meta: {"titel": "Lijst van alle gebruikers & chats", "datum": "November 2024"}, gebruikers : [] };
+const defaultData = { meta: {"title": "List of all users & chats", "date": "November 2024"}, chats : [] };
 const db = await JSONFilePreset('db.json', defaultData);
-const gebruikers = db.data.gebruikers;
 const chats = db.data.chats;
 
 export async function getAllChats(req, res) {
@@ -12,78 +12,33 @@ export async function getAllChats(req, res) {
 }
 
 export async function createChat(req, res) {
-  let id = chats[chats.length - 1].id + 1;
-  let gebruiker1 = Number(req.query.user1);
-  let gebruiker2 = Number(req.query.user2);
-  if (gebruiker1 && gebruiker2) {
-    let chat = {id: id, gebruikers: [gebruiker1, gebruiker2], berichten: []};
+  let id = getUniqueId(chats);
+  let user1 = Number(req.query.user1);
+  let user2 = Number(req.query.user2);
+  if (user1 && user2) {
+    let chat = {id: id, users: [user1, user2], messages: []};
     chats.push(chat);
     await db.write();
-    res.status(201).send(`Deze chat is toegevoegt: ${JSON.stringify(chat)}`);
+    res.status(200).send(`Deze chat is toegevoegt: ${JSON.stringify(chat)}`);
   } else {
     res.status(404).send('Chat mist een parameter');
   }
 }
 
-export async function createMessage(req, res) {
-  // TODO; maak dit maandag
-  let chatId = Number(req.query.chatId);
-  let chat = chats.find(chat => chat.id = chatId);
-  console.log("chat:", chat);
-  if (chat) {
-    let berichten = chat.berichten;
-    let gebruikerId = Number(req.query.userId);
-    // Check hoeveel berichten de chat met de opgegeven ID heeft, vervolgens pakt hij de ID van het laatste bericht en wordt er 1 bij toe gevoegt
-    let id = berichten[berichten.length - 1].id + 1;
-    console.log("id:", id);
-    let tekst = req.query.text;
-    let tijdstip = new Date().toLocaleString();
-    if (id && gebruikerId && tekst && tijdstip) {
-      let message = {id: id, gebruiker: gebruikerId, tekst: tekst, tijdstip: tijdstip};
-      console.log("message:", message);
-      berichten.push(message);
-      console.log("berichten:", berichten);
-      await db.write();
-      res.status(201).send(`Dit bericht is toegevoegt: ${JSON.stringify(message)} aan chat ${chatId}`);
-    } else {
-      res.status(404).send('Bericht mist een parameter');
-    }
-  } else {
-    res.status(404).send('Chat niet gevonden');
-  }
-}
-
 export async function getChatByChatId(req, res) {
   let id = Number(req.params.id);
-  let chat = chats.find(chat => chat.id == id);
-  if (chat) {
-    res.status(200).send(chat);
-  } else {
-    res.status(404).send('Chat niet gevonden');
-  }
+  let chat = chats.find(chat => chat.id === id);
+  getResponseHandler(res, chat, chat, 'Chat niet gevonden');
 }
 
 export async function getChatByUserId(req, res) {
   let userId = Number(req.params.id);
-
   let userChats = [];
-  let idFound = false;
-
   chats.forEach(chat => {
     // Elke chat heeft een array met de ID's van alle gebruikers die meedoen aan de chat.
-    // Hier word er door elke van de indexes in de array geloopt om te kijken of die overeen komt met de opgegeven ID.
-    // Als de opgegeven ID overkomt met de chat, wordt de chat toegevoegd aan de userChats variabele
-    chat.gebruikers.forEach(gebruikerId => {
-      if (gebruikerId === userId) {
-        userChats.push(chat);
-        idFound = true;
-      }
-    });
+    // Hier wordt er gekeken of de opgegeven user ID in deze array zit.
+    // Als de opgegeven ID overkomt met de chat, wordt de chat toegevoegd aan de userChats variabele.
+    if (chat.users.lastIndexOf(userId) >= 0) { userChats.push(chat); }
   });
-
-  if (idFound) {
-    res.status(200).send(userChats);
-  } else {
-    res.status(404).send('Chat niet gevonden');
-  }
+  getResponseHandler(res, userChats.length > 0, userChats, 'Chat niet gevonden');
 }
