@@ -27,14 +27,6 @@
       "email": "test3@email.com",
       "zipcode": "1234AB",
       "co2Contribution": 0
-    },
-    {
-      "id": 4,
-      "name": "testtest",
-      "password": "test",
-      "email": "test",
-      "zipcode": "test",
-      "co2Contribution": 0
     }
   ],
   "chats": [

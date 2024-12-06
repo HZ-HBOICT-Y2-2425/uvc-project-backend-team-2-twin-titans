@@ -74,7 +74,7 @@ export async function updateUser(req, res) {
     user.email = email;
     user.zipcode = zipcode;
     await db.write();
-    res.status(200).send(`Deze gebruiker is verandert: ${JSON.stringify(user)}`);
+    res.status(200).send(user);
   } else {
     res.status(404).send('Gebruiker niet gevonden');
   }
