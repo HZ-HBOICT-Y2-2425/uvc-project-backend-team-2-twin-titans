@@ -12,6 +12,9 @@ export async function getAllUsers(req, res) {
 }
 
 export async function createUser(req, res) {
+  let body = req.body;
+  console.log(body);
+  
   let id = getUniqueId(users);
   let name = req.query.name;
   let password = req.query.password;
@@ -55,5 +58,24 @@ export async function login(req, res) {
     getResponseHandler(res, user.password === password, user, 'Wachtwoord is incorrect');
   } else {
     res.status(404).send('Gebruikersnaam niet gevonden');
+  }
+}
+
+export async function updateUser(req, res) {
+  let id = Number(req.params.id);
+  let user = users.find(user => user.id === id);
+  let name = req.query.name;
+  let password = req.query.password;
+  let email = req.query.email;
+  let zipcode = req.query.zipcode;
+  if (user) {
+    user.name = name;
+    user.password = password;
+    user.email = email;
+    user.zipcode = zipcode;
+    await db.write();
+    res.status(200).send(`Deze gebruiker is verandert: ${JSON.stringify(user)}`);
+  } else {
+    res.status(404).send('Gebruiker niet gevonden');
   }
 }

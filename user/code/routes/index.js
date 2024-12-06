@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllUsers, createUser, getUserById, login, updateCo2ByUserId } from '../controllers/userController.js';
+import { getAllUsers, createUser, getUserById, login, updateCo2ByUserId, updateUser } from '../controllers/userController.js';
 import { createChat, getAllChats, getChatByChatId, getChatByUserId } from '../controllers/chatController.js';
 import { createMessage, getAllMessagesByChatId } from '../controllers/messageController.js';
 import { checkName } from '../middleware/exampleMiddleware.js';
@@ -22,5 +22,6 @@ router.post('/', checkName, cors(), createUser);
 router.get('/login', checkName, cors(), login);
 router.patch('/:id/addco2', cors(), updateCo2ByUserId);
 router.get('/:id', checkName, cors(), getUserById);
+router.put('/:id', checkName, cors(), updateUser);
 
 export default router;
