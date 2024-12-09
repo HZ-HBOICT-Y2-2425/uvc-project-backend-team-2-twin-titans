@@ -7,9 +7,9 @@ router.get('/', cors(), productsController.getProducts);
 
 router.post('/create', cors(), productsController.createProduct);
 
-router.get('/user/:userid', cors(), productsController.getProductsByUserID);
-
 router.get('/product/:productid', cors(), productsController.getProduct);
+
+router.get('/user/:userid', cors(), productsController.getProductsByUserID);
 
 router.put('/update/:productid/userid', cors(), productsController.updateProduct);
 

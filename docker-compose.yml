@@ -34,6 +34,17 @@ services:
       - "3015:3015"
     working_dir: /usr/src/app
     command: bash -c "npm audit && npm install --no-audit && npm run dev"
+  reviews:
+    container_name: reviews
+    build: ./reviews
+    volumes:
+      - ./reviews/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3016:3016"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
   user:
     container_name: user
     build: ./user

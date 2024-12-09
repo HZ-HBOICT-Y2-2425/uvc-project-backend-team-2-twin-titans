@@ -11,7 +11,7 @@ const _products = db.data.products
 
 export async function getProducts(req, res) {
   // Map product IDs to URLs
-  let _productUrls = _products.map(product => `products/${product.id}`);
+  let _productUrls = _products.map(product => `products/product/${product.id}`);
 
   res.status(200).send(_productUrls); // Return the list of product URLs
 }
@@ -144,7 +144,7 @@ export async function createProduct(req, res) {
   db.data.lastID = _id; // Update the last used ID
   await db.write(); // Save changes to the file
 
-  res.status(200).send(`Added product: ${JSON.stringify(_product.id)}`);
+  res.status(200).send(`Created product: ${JSON.stringify(_product.id)}`);
 }
 
 export async function reserveProduct(req, res) {
@@ -289,16 +289,10 @@ export async function updateProduct(req, res) {
 
       res.status(200).send(`Edited product: ${JSON.stringify(_product.id)}`);
     }
-  }
-
-  if (userid == _product.userID) {
-    if (!_product) {
-      return res.status(404).send({ error: "Product not found." });
-    } else {
-      
-    }
-  } else {
+  } else if (_product.userID != userid) {
     return res.status(403).send({ error: "Unauthorized." });
+  } else {
+    return res.status(400).send({ error: "Invalid request." });
   }
 }
 
@@ -307,18 +301,20 @@ export async function deleteProduct(req, res) {
 
   let _productIndex = _products.findIndex(product => product.id == productid); // Find the product with the matching ID
 
-  if (userid == _products[_productIndex].userID) {
-    if (_productIndex === -1) {
-      return res.status(404).send({ error: "Product not found." });
-    } else {
-      _products.splice(_productIndex, 1); // Remove the product from the products array
+  if (_productIndex === -1) {
+    return res.status(404).send({ error: "Product not found." });
+  }
 
-      // Update the JSON file
-      await db.write(); // Save changes to the file
+  if (_products[_productIndex].userID == userid) {
+    _products.splice(_productIndex, 1); // Remove the product from the products array
 
-      res.status(200).send(`Deleted product: ${productid}`);
-    }
-  } else {
+    // Update the JSON file
+    await db.write(); // Save changes to the file
+
+    res.status(200).send(`Deleted product: ${productid}`);
+  } else if (_products[_productIndex].userID != userid) {
     return res.status(403).send({ error: "Unauthorized." });
+  } else {
+    return res.status(400).send({ error: "Invalid request." });
   }
 }
