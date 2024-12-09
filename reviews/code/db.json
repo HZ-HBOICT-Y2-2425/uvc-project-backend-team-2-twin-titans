@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "List of reviews",
+    "date": "9 September 2001"
+  },
+  "lastID": 1,
+  "reviews": [
+    {
+      "id": 1,
+      "userID": 69,
+      "recipeID": 38,
+      "totalRating": 3,
+      "costRating": 4,
+      "difficultyRating": 3,
+      "tasteRating": 2,
+      "creationDate": "12/9/2024, 10:43:37 AM"
+    }
+  ]
+}
