@@ -23,9 +23,15 @@ const categoriesProxy = createProxyMiddleware({
   changeOrigin: true
 })
 
+const reviewsProxy = createProxyMiddleware({
+  target: 'http://reviews:3016',
+  changeOrigin: true
+})
+
 router.use('/microservice', microserviceProxy);
 router.use('/user', userProxy);
 router.use('/products', productsProxy);
 router.use('/categories', categoriesProxy);
+router.use('/reviews', reviewsProxy);
 
 export default router;
