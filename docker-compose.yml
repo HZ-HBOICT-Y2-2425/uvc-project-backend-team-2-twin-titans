@@ -5,79 +5,91 @@ services:
     build: ./recipes
     volumes:
       - ./recipes/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3014:3014"
     working_dir: /usr/src/app
-    command: bash -c "npm install && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
 
   products:
     container_name: products
     build: ./products
     volumes:
       - ./products/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3013:3013"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
+
   categories:
     container_name: categories
     build: ./categories
     volumes:
       - ./categories/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3015:3015"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
+
   reviews:
     container_name: reviews
     build: ./reviews
     volumes:
       - ./reviews/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3016:3016"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
+
   user:
     container_name: user
     build: ./user
     volumes:
       - ./user/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3012:3012"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
+
   microservice:
     container_name: microservice
     build: ./microservice
     volumes:
       - ./microservice/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3011:3011"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
+
   gateway:
     container_name: apigateway
     build: ./apigateway
     volumes:
       - ./apigateway/code:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - msexample
     ports:
       - "3010:3010"
     working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    command: bash -c "npm install --no-audit && npm run dev"
 
 networks:
   msexample:
