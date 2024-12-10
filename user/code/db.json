@@ -10,7 +10,8 @@
       "password": "testtest",
       "email": "test1@email.com",
       "zipcode": "1234AB",
-      "co2Contribution": 0
+      "co2Contribution": 0,
+      "shoppingCart": []
     },
     {
       "id": 2,
@@ -18,7 +19,27 @@
       "password": "testtest",
       "email": "test2@email.com",
       "zipcode": "1234AC",
-      "co2Contribution": 0
+      "co2Contribution": 0,
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 150,
+          "name": "Pizzadeeg",
+          "unit": "gram"
+        },
+        {
+          "id": 2,
+          "amount": 1,
+          "name": "Olijfolie",
+          "unit": "fles"
+        },
+        {
+          "id": 4,
+          "name": "Mozzarella",
+          "amount": "1",
+          "unit": "zak"
+        }
+      ]
     },
     {
       "id": 3,
@@ -26,7 +47,8 @@
       "password": "testtest",
       "email": "test3@email.com",
       "zipcode": "1234AB",
-      "co2Contribution": 0
+      "co2Contribution": 0,
+      "shoppingCart": []
     }
   ],
   "chats": [
