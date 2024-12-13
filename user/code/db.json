@@ -17,6 +17,12 @@
           "name": "Aubergine",
           "amount": 50,
           "unit": "gram"
+        },
+        {
+          "id": 2,
+          "name": "Mozzarella",
+          "amount": 100,
+          "unit": "gram"
         }
       ]
     },
