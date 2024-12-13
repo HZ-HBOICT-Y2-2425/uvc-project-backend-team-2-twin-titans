@@ -11,7 +11,20 @@
       "email": "test1@email.com",
       "zipcode": "1234AB",
       "co2Contribution": 0,
-      "shoppingCart": []
+      "shoppingCart": [
+        {
+          "id": 1,
+          "name": "Aubergine",
+          "amount": 50,
+          "unit": "gram"
+        },
+        {
+          "id": 2,
+          "name": "Mozzarella",
+          "amount": 100,
+          "unit": "gram"
+        }
+      ]
     },
     {
       "id": 2,
