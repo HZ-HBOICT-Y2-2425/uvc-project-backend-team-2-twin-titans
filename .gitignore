@@ -1,5 +1,3 @@
-# Created by https://www.gitignore.io/api/osx,node,linux,macos,windows,vagrant,intellij,visualstudiocode
-
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
@@ -182,7 +180,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/osx,node,linux,macos,windows,vagrant,intellij,visualstudiocode
 
 # We don't need the lock files here 
-# package-lock.json
+package-lock.json
 pnpm-lock.yaml
 
 # Don't commit build artifacts either
