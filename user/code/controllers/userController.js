@@ -12,16 +12,13 @@ export async function getAllUsers(req, res) {
 }
 
 export async function createUser(req, res) {
-  let body = req.body;
-  console.log(body);
-  
   let id = getUniqueId(users);
   let name = req.query.name;
   let password = req.query.password;
   let email = req.query.email;
   let zipcode = req.query.zipcode;
   if (name && password && email && zipcode) {
-    let user = {id: id, name: name, password: password, email: email, zipcode: zipcode, co2Contribution: 0};
+    let user = {id: id, name: name, password: password, email: email, zipcode: zipcode, co2Contribution: 0, shoppingCart: []};
     users.push(user);
     await db.write();
     res.status(200).send(user);
