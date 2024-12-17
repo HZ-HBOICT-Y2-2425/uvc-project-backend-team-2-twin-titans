@@ -9,24 +9,83 @@
       "name": "test1",
       "password": "testtest",
       "email": "test1@email.com",
-      "zipcode": "1234AB",
-      "co2Contribution": 0
+      "zipcode": "4536AG",
+      "co2Contribution": 0,
+      "shoppingCart": [
+        {
+          "id": 1,
+          "name": "Lasagnebladen",
+          "amount": 300,
+          "unit": "gram"
+        },
+        {
+          "id": 3,
+          "name": "Tomatensaus",
+          "amount": 500,
+          "unit": "ml"
+        },
+        {
+          "id": 4,
+          "name": "Bechamelsaus",
+          "amount": 250,
+          "unit": "ml"
+        },
+        {
+          "id": 5,
+          "name": "Parmezaanse kaas",
+          "amount": 100,
+          "unit": "gram"
+        },
+        {
+          "id": 6,
+          "name": "Tomaten",
+          "amount": 2,
+          "unit": "stuks"
+        },
+        {
+          "id": 7,
+          "name": "Rode ui",
+          "amount": 50,
+          "unit": "gram"
+        }
+      ]
     },
     {
       "id": 2,
       "name": "test2",
       "password": "testtest",
       "email": "test2@email.com",
-      "zipcode": "1234AC",
-      "co2Contribution": 0
+      "zipcode": "4330LA",
+      "co2Contribution": 0,
+      "shoppingCart": [
+        {
+          "id": 1,
+          "amount": 150,
+          "name": "Pizzadeeg",
+          "unit": "gram"
+        },
+        {
+          "id": 2,
+          "amount": 1,
+          "name": "Olijfolie",
+          "unit": "fles"
+        },
+        {
+          "id": 4,
+          "name": "Mozzarella",
+          "amount": "1",
+          "unit": "zak"
+        }
+      ]
     },
     {
       "id": 3,
       "name": "test3",
       "password": "testtest",
       "email": "test3@email.com",
-      "zipcode": "1234AB",
-      "co2Contribution": 0
+      "zipcode": "1015AT",
+      "co2Contribution": 0,
+      "shoppingCart": []
     }
   ],
   "chats": [
