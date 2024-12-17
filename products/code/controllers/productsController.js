@@ -1,13 +1,20 @@
 import { JSONFilePreset } from "lowdb/node";
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs";
+
+// Get the directory name (for ES Modules)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Read or create db.json
-// defaultData specifies the structure of the database
 const defaultData = {
-  meta: {"title": "List of products","date": "9 September 2001"},
+  meta: { title: "List of products", date: "9 September 2001" },
   lastID: 0,
-  products : [] }
-const db = await JSONFilePreset('db.json', defaultData)
-const _products = db.data.products
+  products: [],
+};
+const db = await JSONFilePreset("db.json", defaultData);
+const _products = db.data.products;
 
 export async function getProducts(req, res) {
   // Map product IDs to URLs
@@ -46,14 +53,14 @@ export async function createProduct(req, res) {
   // Auto-increment ID
   let _id = _lastID + 1;
 
-  let _userID = parseInt(req.query.userID);
-  let _title = req.query.title;
-  let _consumables = req.query.consumables;
-  let _allergies = req.query.allergies;
-  let _price = parseFloat(req.query.price);
-  let _amount = parseFloat(req.query.amount);
-  let _unit = req.query.unit;
-  let _description = req.query.description;
+  let _userID = parseInt(req.body.userID);
+  let _title = req.body.title;
+  let _consumables = req.body.consumables;
+  let _allergies = req.body.allergies;
+  let _price = parseFloat(req.body.price);
+  let _amount = parseFloat(req.body.amount);
+  let _unit = req.body.unit;
+  let _description = req.body.description;
 
   // Validate input fields
   if (!_userID || !_title || !_consumables || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
@@ -113,6 +120,8 @@ export async function createProduct(req, res) {
   let _reserved = false;
   let _reservedByUserID = null;
 
+  let _imageName = req.file ? req.file.filename : null;
+
   // Calculate '_expirationDate' (7 days ahead of _creationDate)
   let _creationDate = new Date().toLocaleString();
   let _creationDateObject = new Date(); // Parse to Date object
@@ -132,6 +141,7 @@ export async function createProduct(req, res) {
     unit: _unit,
     co2Contribution: parseFloat(_co2Contribution.toFixed(3)),
     description: _description,
+    image: _imageName,
     reserved: _reserved,
     reservedByUserID: _reservedByUserID,
     creationDate: _creationDate,
@@ -215,13 +225,13 @@ export async function updateProduct(req, res) {
     if (_product.reserved) {
       return res.status(400).send({ error: "Product is reserved." });
     } else {
-      let _title = req.query.title;
-      let _consumables = req.query.consumables;
-      let _allergies = req.query.allergies;
-      let _price = parseFloat(req.query.price);
-      let _amount = parseFloat(req.query.amount);
-      let _unit = req.query.unit;
-      let _description = req.query.description;
+      let _title = req.body.title;
+      let _consumables = req.body.consumables;
+      let _allergies = req.body.allergies;
+      let _price = parseFloat(req.body.price);
+      let _amount = parseFloat(req.body.amount);
+      let _unit = req.body.unit;
+      let _description = req.body.description;
 
       // Validate input fields
       if (!_title || !_consumables || isNaN(_price) || isNaN(_amount) || !_unit || !_description) {
@@ -266,6 +276,8 @@ export async function updateProduct(req, res) {
         }
       }
 
+      let _image = req.file ? req.file.filename : null;
+
       // Calculate '_expirationDate' (7 days ahead of _creationDate)
       let _creationDate = new Date().toLocaleString();
       let creationDateObject = new Date(); // Parse to Date object
@@ -281,6 +293,7 @@ export async function updateProduct(req, res) {
       _product.unit = _unit;
       _product.co2Contribution = parseFloat(_co2Contribution.toFixed(3));
       _product.description = _description;
+      _product.image = _image;
       _product.creationDate = _creationDate;
       _product.expirationDate = _expirationDate;
 
@@ -316,5 +329,19 @@ export async function deleteProduct(req, res) {
     return res.status(403).send({ error: "Unauthorized." });
   } else {
     return res.status(400).send({ error: "Invalid request." });
+  }
+}
+
+export async function getImage(req, res) {
+  const { imagename } = req.params;
+
+  // Construct the file path
+  const imagePath = path.join(__dirname, "..", "images", imagename);
+
+  // Check if the file exists
+  if (fs.existsSync(imagePath)) {
+    return res.sendFile(imagePath);
+  } else {
+    return res.status(404).send({ error: "Image not found." });
   }
 }
