@@ -47,6 +47,12 @@
           "name": "Rode ui",
           "amount": 50,
           "unit": "gram"
+        },
+        {
+          "id": 8,
+          "name": "Pizzadeeg",
+          "amount": 150,
+          "unit": "gram"
         }
       ]
     },
