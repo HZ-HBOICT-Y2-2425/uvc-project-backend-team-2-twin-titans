@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "title": "List of products",
+    "date": "9 September 2001"
+  },
+  "lastID": 12,
+  "products": [
+    {
+      "id": 1,
+      "userID": 69,
+      "title": "Vleestomaten Bak 50kg",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 4.95,
+      "amount": 50,
+      "unit": "kg",
+      "co2Contribution": 1.859,
+      "description": "Hele bak vol met vleestomaten. Gister nog gekocht en wil gewoon doorverkopen aan mensen in de omgeving. Een x aantal vleestomaten kopen kan ook. Stuur maar gewoon een chat.",
+      "reserved": true,
+      "reservedByUserID": 85,
+      "creationDate": "11/27/2024, 1:27:36 PM",
+      "expirationDate": "12/4/2024, 1:27:36 PM"
+    },
+    {
+      "id": 2,
+      "userID": 1,
+      "title": "Tomaten 1kg",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 1.15,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 0.037,
+      "description": "1 kilo tomaten. mmmm lekker.",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "11/28/2024, 11:02:59 AM",
+      "expirationDate": "12/5/2024, 11:02:59 AM"
+    },
+    {
+      "id": 3,
+      "userID": 1,
+      "title": "appel",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 2,
+      "amount": 3,
+      "unit": "kg",
+      "co2Contribution": 0.112,
+      "description": "lekkere appels",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/15/2024, 11:26:44 AM",
+      "expirationDate": "12/22/2024, 11:26:44 AM"
+    },
+    {
+      "id": 4,
+      "userID": 5,
+      "title": "appel",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 0.02,
+      "amount": 1,
+      "unit": "g",
+      "co2Contribution": 0,
+      "description": "appel",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/15/2024, 11:39:37 AM",
+      "expirationDate": "12/22/2024, 11:39:37 AM"
+    },
+    {
+      "id": 5,
+      "userID": 4,
+      "title": "appel",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 2,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 0.037,
+      "description": "heb 1 stuk appel over voor 2 euro",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/16/2024, 8:24:22 AM",
+      "expirationDate": "12/23/2024, 8:24:22 AM"
+    },
+    {
+      "id": 6,
+      "userID": 3,
+      "title": "appel moes",
+      "consumables": [
+        5
+      ],
+      "allergies": [
+        3
+      ],
+      "price": 1e+55,
+      "amount": 1e+55,
+      "unit": "ml",
+      "co2Contribution": 3.71830985915493e+50,
+      "description": "lekker sappig",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/16/2024, 9:40:13 AM",
+      "expirationDate": "12/23/2024, 9:40:13 AM"
+    },
+    {
+      "id": 7,
+      "userID": 3,
+      "title": "taart",
+      "consumables": [
+        7
+      ],
+      "allergies": [
+        1,
+        3
+      ],
+      "price": 5,
+      "amount": 1,
+      "unit": "kg",
+      "co2Contribution": 0.037,
+      "description": "lekker",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/16/2024, 12:55:06 PM",
+      "expirationDate": "12/23/2024, 12:55:06 PM"
+    },
+    {
+      "id": 8,
+      "userID": 3,
+      "title": "bloemkool",
+      "consumables": [
+        5
+      ],
+      "allergies": [],
+      "price": 0.5,
+      "amount": 100,
+      "unit": "g",
+      "co2Contribution": 0.004,
+      "description": "top",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/16/2024, 1:33:40 PM",
+      "expirationDate": "12/23/2024, 1:33:40 PM"
+    },
+    {
+      "id": 9,
+      "userID": 4,
+      "title": "appel",
+      "consumables": [
+        4
+      ],
+      "allergies": [],
+      "price": 2,
+      "amount": 10,
+      "unit": "g",
+      "co2Contribution": 0,
+      "description": "een appel",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/16/2024, 4:21:10 PM",
+      "expirationDate": "12/23/2024, 4:21:10 PM"
+    },
+    {
+      "id": 10,
+      "userID": 4,
+      "title": "koek",
+      "consumables": [
+        7
+      ],
+      "allergies": [
+        4
+      ],
+      "price": 500,
+      "amount": 3,
+      "unit": "ml",
+      "co2Contribution": 0,
+      "description": "sappig",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/17/2024, 9:42:33 AM",
+      "expirationDate": "12/24/2024, 9:42:33 AM"
+    },
+    {
+      "id": 11,
+      "userID": 4,
+      "title": "Bechamelsaus",
+      "consumables": [
+        2
+      ],
+      "allergies": [
+        3
+      ],
+      "price": 25,
+      "amount": 500,
+      "unit": "ml",
+      "co2Contribution": 0.019,
+      "description": "lekker",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/17/2024, 10:02:22 AM",
+      "expirationDate": "12/24/2024, 10:02:22 AM"
+    },
+    {
+      "id": 12,
+      "userID": 4,
+      "title": "rode uien",
+      "consumables": [
+        5
+      ],
+      "allergies": [],
+      "price": 1,
+      "amount": 3,
+      "unit": "kg",
+      "co2Contribution": 0.112,
+      "description": "ok",
+      "reserved": false,
+      "reservedByUserID": null,
+      "creationDate": "12/17/2024, 10:19:59 AM",
+      "expirationDate": "12/24/2024, 10:19:59 AM"
+    }
+  ]
+}
