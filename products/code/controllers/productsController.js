@@ -44,7 +44,7 @@ export async function getProductsByUserID(req, res) {
     return res.status(404).send({ error: "No products found for this user." });
   }
 
-  let _productUrls = _products.map(product => `products/product/${product.id}`);  // Map product IDs to URLs
+  let _productUrls = _userProducts.map(product => `products/product/${product.id}`);  // Map product IDs to URLs
   
   if (!_productUrls) {
     return res.status(404).send({ error: "No products found for this user." });
