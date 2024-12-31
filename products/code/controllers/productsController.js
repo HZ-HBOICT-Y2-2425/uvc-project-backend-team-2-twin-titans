@@ -42,9 +42,15 @@ export async function getProductsByUserID(req, res) {
 
   if (!_userProducts) {
     return res.status(404).send({ error: "No products found for this user." });
-  } else {
-    return res.status(200).send(_userProducts); // Return the product
   }
+
+  let _productUrls = _products.map(product => `products/product/${product.id}`);  // Map product IDs to URLs
+  
+  if (!_productUrls) {
+    return res.status(404).send({ error: "No products found for this user." });
+  }
+
+  return res.status(200).send(_productUrls); // Return the product
 }
 
 export async function createProduct(req, res) {
