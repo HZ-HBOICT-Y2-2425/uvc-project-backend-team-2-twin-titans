@@ -20,6 +20,9 @@ router.put('/update/:productid/:userid', cors(), productsMiddleware.handleImageU
 router.delete('/delete/:productid/:userid', cors(), productsController.deleteProduct);
 
 router.put('/unreserve/:productid/:userid', cors(), productsController.unreserveProduct);
+
 router.put('/reserve/:productid/:userid/:reservedbyuserid', cors(), productsController.reserveProduct);
+
+router.get('/reservation/:userId', cors(), productsController.getProductsByReservationUserID);
 
 export default router;

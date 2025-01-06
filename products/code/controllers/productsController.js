@@ -28,7 +28,7 @@ export async function getProduct(req, res) {
 
   let _product = _products.find(product => product.id == _productID); // Find the product with the matching ID
 
-  if (!_product) {
+  if (_product === undefined) {
     return res.status(404).send({ error: "Product not found." });
   } else {
     return res.status(200).send(_product); // Return the product object
@@ -45,6 +45,24 @@ export async function getProductsByUserID(req, res) {
   }
 
   let _productUrls = _userProducts.map(product => `products/product/${product.id}`);  // Map product IDs to URLs
+  
+  if (!_productUrls) {
+    return res.status(404).send({ error: "No products found for this user." });
+  }
+
+  return res.status(200).send(_productUrls); // Return the product
+}
+
+export async function getProductsByReservationUserID(req, res) {
+  let _userId = req.params.userId; // Get the userid from the query parameter
+
+  let _reservedProducts = _products.filter(product => product.reservedByUserID == _userId); // Find the products with the matching userID
+
+  if (!_reservedProducts) {
+    return res.status(404).send({ error: "No products found for this user." });
+  }
+
+  let _productUrls = _reservedProducts.map(product => `products/product/${product.id}`);  // Map product IDs to URLs
   
   if (!_productUrls) {
     return res.status(404).send({ error: "No products found for this user." });

@@ -56,8 +56,8 @@
       "unit": "kg",
       "co2Contribution": 0.112,
       "description": "lekkere appels",
-      "reserved": false,
-      "reservedByUserID": null,
+      "reserved": true,
+      "reservedByUserID": 3,
       "creationDate": "12/15/2024, 11:26:44 AM",
       "expirationDate": "12/22/2024, 11:26:44 AM"
     },
@@ -133,8 +133,8 @@
       "unit": "kg",
       "co2Contribution": 0.037,
       "description": "lekker",
-      "reserved": false,
-      "reservedByUserID": null,
+      "reserved": true,
+      "reservedByUserID": 1,
       "creationDate": "12/16/2024, 12:55:06 PM",
       "expirationDate": "12/23/2024, 12:55:06 PM"
     },
