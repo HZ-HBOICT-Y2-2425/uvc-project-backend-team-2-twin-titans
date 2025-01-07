@@ -15,11 +15,23 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
+// Define custom storage to set file extension to .png
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    // Generate a unique filename and append .png extension
+    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1e9)}.png`;
+    cb(null, uniqueName);
+  },
+});
+
+// Configure Multer with custom storage and file filter
 const upload = multer({
-  dest: uploadDir,
+  storage: storage,
   limits: { fileSize: 2 * 1024 * 1024 }, // 2MB file limit
   fileFilter: (req, file, cb) => {
-
     const filetypes = /jpeg|jpg|png/;
     const mimetype = filetypes.test(file.mimetype);
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -31,4 +43,5 @@ const upload = multer({
   },
 });
 
+// Export the middleware
 export const handleImageUpload = upload.single('image');

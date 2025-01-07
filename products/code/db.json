@@ -19,8 +19,8 @@
       "co2Contribution": 0.037,
       "description": "Lekkere bananen voor maar 1.10 euro POG",
       "image": "1736246302746-301260077.png",
-      "reserved": true,
-      "reservedByUserID": 3,
+      "reserved": false,
+      "reservedByUserID": null,
       "creationDate": "1/7/2025, 10:38:22 AM",
       "expirationDate": "1/14/2025, 10:38:22 AM"
     },
