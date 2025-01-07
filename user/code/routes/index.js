@@ -26,8 +26,8 @@ router.delete('/:id/cart/:itemId', deleteItemInCart);
 router.get('/', checkName, getAllUsers);
 router.post('/', checkName, createUser);
 router.get('/login', checkName, login);
-router.patch('/:id/addco2', updateCo2ByUserId);
+router.put('/:id/addco2', updateCo2ByUserId);
 router.get('/:id', checkName, getUserById);
-router.patch('/:id', checkName, updateUser);
+router.put('/:id', checkName, updateUser);
 
 export default router;
