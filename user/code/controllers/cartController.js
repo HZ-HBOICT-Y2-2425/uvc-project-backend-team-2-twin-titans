@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler, postResponseHandler, getUniqueId } from "./helperFunctions.js";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Database setup
 const defaultData = { meta: { title: "List of all users & chats", date: "November 2024" }, users: [] };
