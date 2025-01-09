@@ -1,5 +1,5 @@
 import { JSONFilePreset } from "lowdb/node";
-import { getResponseHandler, postResponseHandler, getUniqueId } from "./helperFunctions.js";
+import { getResponseHandler, getUniqueId } from "./helperFunctions.js";
 
 // Database setup
 const defaultData = { meta: { title: "List of all users & chats", date: "November 2024" }, users: [] };
@@ -24,25 +24,33 @@ export async function getShoppingCartByUserId(req, res) {
 // Voeg item toe aan winkelwagen
 export async function addToShoppingCart(req, res) {
     const userId = Number(req.params.id);
-    const user = findUserById(userId);
 
+    // Zoek gebruiker op basis van ID
+    const user = findUserById(userId);
     if (!user) {
         return getResponseHandler(res, false, null, 'Gebruiker niet gevonden');
     }
 
-    const { name, amount, unit } = req.body;
+    // Verkrijg gegevens van de URL parameters
+    const { name, amount, unit } = req.query; // Gebruik req.query voor query parameters
 
+    // Valideer de binnengekomen gegevens
     if (!name || !amount || !unit || isNaN(amount)) {
         return getResponseHandler(res, false, null, 'Invalid data: name, amount, and unit are required. Amount must be a number.');
     }
 
-    const cartItem = { id: getUniqueId(user.shoppingCart), name, amount, unit };
+    // Maak een nieuw winkelwagen item aan
+    const cartItem = { id: getUniqueId(user.shoppingCart), name, amount: Number(amount), unit };
 
-    const condition = true; // We're always adding the item if we reach here
-    const goodMessage = user.shoppingCart;
-    const errorMessage = 'Fout bij opslaan van winkelwagen';
+    // Voeg het item toe aan de winkelwagen
+    user.shoppingCart.push(cartItem);
 
-    await postResponseHandler(res, condition, goodMessage, errorMessage, db, user.shoppingCart, cartItem);
+    // Stuur een succesbericht met de bijgewerkte winkelwagen
+    return res.status(201).json({
+        success: true,
+        data: user.shoppingCart,
+        message: 'Item succesvol toegevoegd aan winkelwagen',
+    });
 }
 
 // Update winkelwagenitem
