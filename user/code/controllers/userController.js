@@ -32,12 +32,18 @@ export async function updateCo2ByUserId(req, res) {
   let co2 = Number(req.query.co2);
   let user = users.find(user => user.id === id);
   if (user) {
-    user.co2Contribution = (parseInt(user.co2Contribution) + co2).toFixed(3);
+    user.co2Contribution = roundNumber(Number(user.co2Contribution) + co2);
     await db.write();
     res.status(200).send(user);
   } else {
     res.status(404).send('Gebruiker niet gevonden');
   }
+}
+
+function roundNumber(number) {
+  const test = Math.round(number * 1e3) / 1e3;
+  console.log("test:", test);
+  return test;
 }
 
 export async function getUserById(req, res) {
