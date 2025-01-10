@@ -32,9 +32,7 @@ export async function updateCo2ByUserId(req, res) {
   let co2 = Number(req.query.co2);
   let user = users.find(user => user.id === id);
   if (user) {
-    console.log("old co2:", user);
     user.co2Contribution = roundNumber(Number(user.co2Contribution) + co2);
-    console.log("new co2:", user);
     await db.write();
     res.status(200).send(user);
   } else {
