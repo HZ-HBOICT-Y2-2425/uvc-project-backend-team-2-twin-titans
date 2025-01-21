@@ -32,6 +32,15 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-         # 8. Analyseer codecomplexiteit met Plato
-      - name: Analyze Code Complexity with Plato
-        run: npx plato -r -d plato-report src
+             # 8. Analyseer met SonarCloud
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=<YOUR_PROJECT_KEY>
+            -Dsonar.organization=<YOUR_ORGANIZATION>
+            -Dsonar.sources=src
+            -Dsonar.tests=tests
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.host.url=https://sonarcloud.io
