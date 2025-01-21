@@ -31,3 +31,7 @@ jobs:
       # 7. Run ESLint
       - name: Run ESLint
         run: npm run lint
+
+         # 8. Analyseer codecomplexiteit met Plato
+      - name: Analyze Code Complexity with Plato
+        run: npx plato -r -d plato-report src
